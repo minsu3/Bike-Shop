@@ -1,41 +1,37 @@
 import React, {Component} from 'react';
 import Header from './component/Header';
 import route from './config/route';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
  
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <span>
-
         <ul> 
           <li>
-            <NavLink to={'/newsletter'} className="firstNav" activeClassName="active">Subscribe for a newsletter!</NavLink>
+            <Link to={'/newsletter'} className="firstNav">Subscribe for a newsletter!</Link>
           </li>
           <li>
-            <NavLink to={'/findretailer'} className="firstNav" activeClassName="active">Find a retailer</NavLink>
+            <Link to={'/findretailer'} className="firstNav">Find a retailer</Link>
           </li>
           <li>
-            <NavLink to={'/userauth'} className="firstNav" activeClassName="active">Sign-In</NavLink>
+            <Link to={'/userauth'} className="firstNav">Sign-In</Link>
           </li>
         </ul>
-          <ul>
-            <li>
-              <NavLink to={"/bikes"} className="secondNav" activeClassName="active">Bikes</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/about"} className="secondNav" activeClassName="active">About Us</NavLink>
-            </li>
-          </ul>
+        <ul>
+          <li>
+            <Link to={"/bikes"} className="secondNav">Bikes</Link>
+          </li>
+          <li>
+            <Link to={"/about"} className="secondNav">About Us</Link>
+          </li>
+        </ul>
+        <span>
+          <Header />
         </span>
-        <div id="header">
-          <span>
-            <Header />
-          </span>
-        </div>
-        
       </div>
+
+
     );
   }
 }

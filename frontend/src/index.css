@@ -14,35 +14,41 @@ code {
 
 ul {
   list-style-type: none;
-}
-li {
-  float: left;
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  line-break: auto;
 }
 .firstNav {
-  padding: 8px;
-  width: 100%;
-  background-color: black;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 45px;
-  padding-right: 45px;
+  float: left;
+  display: block;
   color: white;
+  text-align: center;
+  padding: 4px 16px;
   text-decoration: none;
-  line-break: normal;
-} 
+  font-size: 17px;
+  right: 0px;
+}
+
 .secondNav {
-  padding: 8px;
-  width: 100%;
-  background-color: black;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 45px;
-  padding-right: 45px;
-  color: white;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 4px;
   text-decoration: none;
-  line-break: normal;
+  font-size: 17px;
+  right: 10px;
+  /* width: 100%;
+  background-color: gray;
+  color: black;
+  text-decoration: none; */
+  position: fixed;
+  top: 44px;
 }
 header {
   text-align: center;
+  line-height: 1000px;
 }
-
