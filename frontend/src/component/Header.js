@@ -2,9 +2,7 @@ import React from 'react';
 
 function Header() {
     return (
-        <header>
-            <h1>Website</h1>
-        </header>
+        <header>WEBSITE</header>
     )
 }
 
