@@ -4,7 +4,7 @@ class findRetailer extends Component {
     render() {
         return (
             <div>
-                <h1>hi</h1>
+                <h1>find retailer</h1>
             </div>
         )
     }

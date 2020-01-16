@@ -4,7 +4,7 @@ class subscribeNow extends Component {
     render() {
         return (
             <div>
-                <h1>hi</h1>
+                <h1>subscribe</h1>
             </div>
         )
     }
