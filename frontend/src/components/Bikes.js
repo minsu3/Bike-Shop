@@ -4,7 +4,7 @@ class Bikes extends Component {
     render() {
         return (
             <div>
-                <h1>list of bikes</h1>
+                <h2>list of bikes</h2>
             </div>
         )
     }

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import sworks from "../sworks.jpg";
-import reactbike from "../reactbike.png";
+import sworks from "../images/sworks.jpg";
+import reactbike from "../images/reactbike.png";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-
 
 class Home extends Component {
     render() {
         return (
           <div className="Home">
-          
+
             <img src={sworks} alt="banner" />
 
             <h1>React Bike Shop</h1>

@@ -1,24 +1,24 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Header from '../component/Header';
-import subscribeNow from '../component/subscribeNow';
-import findRetailer from '../component/findRetailer';
-import signIn from '../component/signIn';
-import bikes from '../component/bikes';
-import aboutPage from '../component/aboutPage';
-import shoppingCart from '../component/shoppingCart';
+import Home from '../components/Home';
+import subscribeNow from '../components/subscribeNow';
+import findRetailer from '../components/findRetailer';
+import signIn from '../components/signIn';
+import BikeContainer from '../containers/BikeContainer';
+import aboutPage from '../components/aboutPage';
+import shoppingCart from '../components/shoppingCart';
 
 export default (
     <div>
         <Switch>
-            <Route exact path='/' component={ Header } />
-            <Route exact path='/newsletter' component={ subscribeNow } />
-            <Route exact path='/findretailer' component={ findRetailer } />
-            <Route exact path='/userauth' component={ signIn } />
-            <Route exact path='/bikes' component={ bikes } />
-            <Route exact path='/about' component={ aboutPage } />
-            <Route exact path='/shoppingcart' component={ shoppingCart } />
-            
+            <Route exact path='/' component={ Home } />
+            <Route path='/home' component={ Home } />
+            <Route path='/newsletter' component={ subscribeNow } />
+            <Route path='/findretailer' component={ findRetailer } />
+            <Route path='/userauth' component={ signIn } />
+            <Route path='/bikes' component={ BikeContainer } />
+            <Route path='/aboutus' component={ aboutPage } />
+            <Route path='/shoppingcart' component={ shoppingCart } />
         </Switch>
     </div>
 )

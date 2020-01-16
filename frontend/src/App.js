@@ -1,52 +1,42 @@
 import React, { Component } from 'react';
-import Header from './component/Header';
-import bikes from './component/bikes';
-import './index.css';
+import { withRouter } from 'react-router-dom';
+import Header from './components/Header';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import sworks from "./sworks.jpg";
+import route from './config/route'
+import NavBar from './components'
 
 class App extends Component {
+
+	state = {
+		currentUser: localStorage.getItem('uid');
+	};
+
+	setCurrentUser = (token) => {
+		this.setState({ currentUser: token })
+		localStorage.setItem('uid', token)
+	};
+
+	logout = () => {
+		// Handle Logout
+		localStorage.removeItem('uid')
+		this.setState({ currentUser: null })
+		this.props.history.push('/login')
+	}
+
 	render() {
 		return (
       <div>
-        <Navbar variant="dark" fixed="bottom">
-          <Navbar.Brand href={"/home"} className="next">
-            REACT BIKE SHOP
-          </Navbar.Brand>
-          <Nav id="second">
-            <Nav.Link href={"/bikes"} className="next">
-              BIKES
-            </Nav.Link>
-            <Nav.Link href={"/aboutus"} className="next">
-              ABOUT US
-            </Nav.Link>
-          </Nav>
-        </Navbar>
+				<Header />
+				{ route }
+				<header />
 
-        <Navbar variant="dark" fixed="top">
-          <Nav id="first">
-            <Nav.Link href={"/newsletter"} className="light">
-              Subscribe
-            </Nav.Link>
-            <Nav.Link href={"/findretailer"} className="light">
-              Find a retailer
-            </Nav.Link>
-            <Nav.Link href={"/userauth"} className="light">
-              Sign in
-            </Nav.Link>
-          </Nav>
-        </Navbar>
-        <span>
-          <img src={sworks} alt="banner" />
-          <h1>React Bike Shop</h1>
-          <Header />
-					<bikes />
-        </span>
+				<NavBar currentUser={this.state.currentUser} logout={this.logout} />
+				<div className="container">
+					<Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+				</div>
       </div>
     );
 	}
 }
 
-export default App;
+export default withRouter(App);
