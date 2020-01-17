@@ -4,6 +4,7 @@ import reactbike from "../images/reactbike.png";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
+
 class Home extends Component {
     render() {
         return (
@@ -11,7 +12,7 @@ class Home extends Component {
 
             <img src={sworks} alt="banner" />
 
-            <h1>React Bike Shop</h1>
+            <h1>The All New S-Works Venge</h1>
 
             <img src={reactbike} alt="reactbike" id="reactbike" />
 

@@ -7,7 +7,7 @@ class Register extends Component {
     username: '',
     email: '',
     password: '',
-    password: '',
+    password2: '',
     errors: null,
   };
 
@@ -30,9 +30,85 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
-        
+      <div className="row">
+        {this.state.errors &&
+          this.state.errors.map((e, i) => (
+            <div
+              className="alert alert-danger alert-dismissible fade show"
+              style={{ width: "100%" }}
+              role="alert"
+              key={i}
+            >
+              {e.message}
+              <button
+                type="button"
+                className="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          ))}
+        <section id="register" className="col-md-6 offset-md-3">
+          <h2 className="mb-4">Register</h2>
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                type="username"
+                id="username"
+                name="username"
+                value={this.state.username}
+                onChange={this.handleChange}
+                className="form-control form-control-lg"
+                placeholder="Username"
+              ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                className="form-control form-control-lg"
+                placeholder="example@example.com"
+              ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="Password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+                className="form-control form-control-lg"
+              ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="password2">Confirm Passowrd</label>
+              <input
+                type="password"
+                id="password2"
+                name="password2"
+                value={this.state.password2}
+                onChange={this.handleChange}
+                className="form-control form-control-lg"
+              ></input>
+            </div>
+            <button 
+              type="submit" 
+              className="btn btn-primary float-right">
+              Register
+            </button>
+          </form>
+        </section>
       </div>
-    )
-  }
-}
+    );
+  };
+};
+
+export default Register;

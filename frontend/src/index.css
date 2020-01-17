@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap');
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -23,8 +25,9 @@ h1 {
     color: white;
     position: absolute;
     top: 30%;
-    left: 20%;
+    left: 23%;
     transform: translate(-50%, -50%);
+    font-family: 'Big Shoulders Text';
 }
 
 h2 {
@@ -34,13 +37,12 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 #reactbike {
     color: white;
     position: absolute;
     top: 30%;
-    left: 6%;
+    left: 7%;
     transform: translate(-50%, -50%);
     width: 10%;
     height: 10%;
@@ -75,8 +77,8 @@ header {
 
 #shopnow {
     position: absolute;
-    top: 40%;
-    left: 17%;
+    top: 38%;
+    left: 20%;
     transform: translate(-50%, -50%);
     width: 8%;
     height: 1.5;
@@ -85,3 +87,4 @@ header {
 #second {
     text-align: center;
 }
+
