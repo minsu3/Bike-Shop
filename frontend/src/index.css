@@ -67,11 +67,24 @@ img {
     color: black;
 }
 
+#brand {
+    font-family: 'Big Shoulders Text';
+    font-size: xx-large;
+}
+
 header {
     text-align: center;
     align-items: flex-start;
     display: flex;
     height: 1000px;
+    background-color: black;
+}
+
+auth {
+    text-align: center;
+    align-items: flex-start;
+    display: flex;
+    height: 96px;
     background-color: black;
 }
 

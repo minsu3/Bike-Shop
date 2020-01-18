@@ -24,7 +24,7 @@ class signIn extends Component {
   render() {
     return (
       <div>
-        <header />
+        <auth />
         <NavBar currentUser={this.state.currentUser} logout={this.logout} />
         <div className="container">
           <Routes

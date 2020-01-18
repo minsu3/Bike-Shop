@@ -29,7 +29,7 @@ class Header extends Component {
           </Navbar>
 
           <Navbar bg="light" variant="light" className="nextbar">
-            <Navbar.Brand href={"/home"} className="next">
+            <Navbar.Brand href={"/home"} id="brand">
               REACT BIKE SHOP
             </Navbar.Brand>
             <Nav id="second">

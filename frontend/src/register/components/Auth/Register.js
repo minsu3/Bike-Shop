@@ -51,7 +51,7 @@ class Register extends Component {
             </div>
           ))}
         <section id="register" className="col-md-6 offset-md-3">
-          <h2 className="mb-4">Register</h2>
+          {/* <h2 className="mb-4">Register</h2> */}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username</label>
@@ -89,7 +89,7 @@ class Register extends Component {
               ></input>
             </div>
             <div className="form-group">
-              <label htmlFor="password2">Confirm Passowrd</label>
+              <label htmlFor="password2">Confirm Password</label>
               <input
                 type="password"
                 id="password2"
@@ -102,7 +102,7 @@ class Register extends Component {
             <button 
               type="submit" 
               className="btn btn-primary float-right">
-              Register
+              CREATE ACCOUNT
             </button>
           </form>
         </section>

@@ -59,7 +59,7 @@ class Login extends Component {
           </div>
         )}
         <section id="login" className="col-md-6 offset-md-3">
-          <h2 classNAme="mb-4">Login</h2>
+          {/* <h2 classNAme="mb-4">Login</h2> */}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -85,7 +85,7 @@ class Login extends Component {
               />
             </div>
             <button type="submit" className="btn btn-primary float-right">
-              Login
+              SIGN IN
             </button>
           </form>
         </section>

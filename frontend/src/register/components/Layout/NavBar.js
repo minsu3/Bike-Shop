@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom';
 const NavBar = ({ currentUser, logout }) => {
   const links = (
     <>
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <NavLink className="nav-link" exact to="/userauth">
           Home
         </NavLink>
-      </li>
+      </li> */}
       <li className="nav-item">
         <NavLink className="nav-link" to="/userauth/login">
           Sign In
@@ -16,7 +16,7 @@ const NavBar = ({ currentUser, logout }) => {
       </li>
       <li className="nav-item">
         <NavLink className="nav-link" to="/userauth/register">
-          Sign Up
+          Create Account
         </NavLink>
       </li>
     </>
@@ -42,10 +42,10 @@ const NavBar = ({ currentUser, logout }) => {
   );
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-5">
+    <nav className="navbar navbar-expand-md navbar-light bg-light mb-5">
       <div className="container">
         <NavLink className="navbar-brand" to="/userauth">
-          Auth API
+          SIGN IN | CREATE ACCOUNT
         </NavLink>
         <button
           className="navbar-toggler"

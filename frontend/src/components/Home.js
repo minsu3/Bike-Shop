@@ -12,7 +12,7 @@ class Home extends Component {
 
             <img src={sworks} alt="banner" />
 
-            <h1>The All New S-Works Venge</h1>
+            <h1 id="venge">The All New S-Works Venge</h1>
 
             <img src={reactbike} alt="reactbike" id="reactbike" />
 

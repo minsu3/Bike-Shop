@@ -3,7 +3,8 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <p>let's put the registration and login in here</p>
+
+      <p>This is the home component</p>
     </div>
   );
 };

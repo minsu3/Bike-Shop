@@ -10,10 +10,10 @@ class App extends Component {
       <div>
 
 				<Header />
-
+				
 				{ route }
 
-				<header />
+				{/* <header /> */}
 
       </div>
     );
