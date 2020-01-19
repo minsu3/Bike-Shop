@@ -26,7 +26,7 @@ const createTableBikeMakeQuery =
 // Bike Specs Table
 const createTableBikeSpecsQuery = 
   `CREATE TABLE IF NOT EXISTS bike_specs (
-    brand-id INTEGER, 
+    brand_id INTEGER, 
     size TEXT,
     color TEXT,
     material TEXT, 
