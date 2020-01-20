@@ -5,7 +5,7 @@ const users_list = [
     first_name: "",
     last_name: "",
     email: "",
-    street_address_number: "",
+    street_number: "",
     street_name: "",
     city: "",
     state: "",
@@ -47,7 +47,7 @@ db.serialize(() => {
   })
 
   const createUsersTableQuery = 
-    'CREATE TABLE users (first_name TEXT, last_name TEXT, email NVARCHAR(320) - 64, street_address_number INTEGER, street_name TEXT, city TEXT, state TEXT, zip_code TEXT, phone_number TEXT, registration_date DATETIME )'
+    'CREATE TABLE users (first_name TEXT, last_name TEXT, email NVARCHAR(320) - 64, street_number INTEGER, street_name TEXT, city TEXT, state TEXT, zip_code TEXT, phone_number TEXT, registration_date DATETIME )'
     db.run(createUsersTableQuery, error=> {
       if(error) console.error("Error creating 'users' table");
       else console.log("Created 'users' table");
@@ -55,7 +55,7 @@ db.serialize(() => {
 
   const insertUsersQuery = 'INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
   for(let user of users_list) {
-    let userData = [user.first_name, user.last_name, user.email, user.street_address_number, user.street_name, user.city, user.state, user.zip_code, user.phone_number, user.registration_date];
+    let userData = [user.first_name, user.last_name, user.email, user.street_number, user.street_name, user.city, user.state, user.zip_code, user.phone_number, user.registration_date];
     db.run(insertUsersQuery, userData, error=> {
       if(error) console.log("Could not insert user", [user.first_name, user.last_name], error);
       else console.log(`Inserted user with name ${user.first_name} ${user.last_name} into 'users' table`);
