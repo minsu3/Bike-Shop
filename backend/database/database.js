@@ -1,4 +1,4 @@
-let sqlite3 = requre('sqlite3');
+let sqlite3 = require('sqlite3');
 let database = new sqlite3.Database('./database.db');
 
 // User table
