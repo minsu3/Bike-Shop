@@ -185,17 +185,17 @@ app.get("/api/cannondale", (req, res) => {
   });
 });
 
-// app.get("/api/bikemake/:id", (req, res) => {
-//   const makeId = req.params.id;
-//   const getOneMake = `SELECT * FROM bike_make WHERE bike_make.oid = ?`;
+app.get("/api/specialized/:id", (req, res) => {
+  const makeId = req.params.id;
+  const getOneMake = `SELECT * FROM bike_make WHERE bike_make.oid = ?`;
 
-//   db.all(getOneMake, [makeId], (error, results) => {
-//     if (error) {
-//       console.log("Failed to retrieve a bike make from table", error);
-//       res.sendStatus(500);
-//     } else res.status(200).json(results);
-//   });
-// });
+  db.all(getOneMake, [makeId], (error, results) => {
+    if (error) {
+      console.log("Failed to retrieve a bike make from table", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
 
 // app.post("/api/bikemake", (req, res) => {
 //   const reqBody = [req.body.brand];

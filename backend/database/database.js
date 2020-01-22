@@ -34,6 +34,7 @@ const createTableCannondaleQuery =
 const createSpecializedBikeQuery = 
   `CREATE TABLE IF NOT EXISTS specialized_bikes (
     brand_name TEXT,
+    name TEXT,
     type TEXT,
     category TEXT
     size TEXT,
@@ -44,6 +45,7 @@ const createSpecializedBikeQuery =
 const createTrekBikeQuery = 
   `CREATE TABLE IF NOT EXISTS trek_bikes (
     brand_name TEXT,
+    name TEXT,
     type TEXT,
     category TEXT
     size TEXT,
@@ -54,6 +56,7 @@ const createTrekBikeQuery =
 const createCannondaleBikeQuery = 
   `CREATE TABLE IF NOT EXISTS cannondale_bikes (
     brand_name TEXT,
+    name TEXT,
     type TEXT,
     category TEXT
     size TEXT,

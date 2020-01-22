@@ -36,59 +36,65 @@ const cannondale = [
 const specialized_bikes = [
   {
     brand_name: specialized[0].brand,
+    name: "Venge",
     type: "Road",
-    category: "Endurance",
-    size: "54",
-    color: "Blue",
-    material: "aluminum",
+    category: "Aero",
+    size: "Medium",
+    color: "Matte Black",
+    material: "Carbon Fiber",
     component: "Shimano"
   },
   {
     brand_name: specialized[0].brand,
-    type: "Moutain",
-    category: "Cross Country",
-    size: "54",
-    color: "Red",
-    material: "carbon fiber",
+    name: "Stumpjumper",
+    type: "Mountain",
+    category: "Trail",
+    size: "Small",
+    color: "Dark Grap",
+    material: "Carbon Fiber",
     component: "Campagnolo"
   },
   {
     brand_name: specialized[0].brand,
-    type: "Road",
-    category: "Gravel",
-    size: "54",
-    color: "Green",
+    name: "Shiv",
+    type: "Triathlon",
+    category: "Aero",
+    size: "Large",
+    color: "Sunset Five-O/Gloss White",
     material: "Titanium",
-    component: "Sram Red"
+    component: "Sram"
   }
 ]
 
 const trek_bikes = [
   {
     brand_name: trek[0].brand,
+    name: "Domane",
     type: "Road",
     category: "Endurance",
-    size: "54",
-    color: "Blue",
-    material: "aluminum",
+    size: "Medium",
+    color: "Red",
+    material: "Carbon Fiber",
     component: "Shimano"
   },
   {
     brand_name: trek[0].brand,
-    type: "Road",
-    category: "Endurance",
-    size: "54",
-    color: "Blue",
-    material: "aluminum",
+    name: "Supercaliber",
+    type: "Mountain",
+    category: "Downhill",
+    size: "Large",
+    color: "Black",
+    material: "Carbon Fiber",
     component: "Shimano"
   },
   {
     brand_name: trek[0].brand,
-    type: "Road",
+    name: "Boone",
+    type: "Cyclocross",
     category: "Endurance",
-    size: "54",
-    color: "Blue",
-    material: "aluminum",
+    size: "Small",
+    color: "Pink",
+    material: "Carbon Fiber",
     component: "Shimano"
   }
 ]
@@ -96,29 +102,32 @@ const trek_bikes = [
 const cannondale_bikes = [
   {
     brand_name: cannondale[0].brand,
+    name: "SuperSix Evo",
     type: "Road",
-    category: "Endurance",
-    size: "54",
-    color: "Blue",
-    material: "aluminum",
+    category: "Lightweight",
+    size: "Small",
+    color: "Green",
+    material: "Carbon Fiber",
     component: "Shimano"
   },
   {
     brand_name: cannondale[0].brand,
-    type: "Road",
-    category: "Endurance",
-    size: "54",
+    name: "Bad Habit",
+    type: "Mountain",
+    category: "Trail",
+    size: "Medium",
     color: "Blue",
-    material: "aluminum",
-    component: "Shimano"
+    material: "Carbon Fiber",
+    component: "Sram"
   },
   {
     brand_name: cannondale[0].brand,
+    name: "Caad-12",
     type: "Road",
-    category: "Endurance",
-    size: "54",
+    category: "Aero",
+    size: "Large",
     color: "Blue",
-    material: "aluminum",
+    material: "Aluminum",
     component: "Shimano"
   }
 ]
@@ -232,16 +241,17 @@ db.serialize(() => {
   })
 
   const createSpecializedBikesTableQuery = 
-    'CREATE TABLE specialized_bikes (brand_name TEXT, type TEXT, category TEXT, size TEXT, color TEXT, material TEXT, component TEXT)';
+    'CREATE TABLE specialized_bikes (brand_name TEXT, name TEXT, type TEXT, category TEXT, size TEXT, color TEXT, material TEXT, component TEXT)';
   db.run(createSpecializedBikesTableQuery, error=> {
       if (error) console.error("Error creating 'specialized_bikes' table");
       else console.log("Created 'specialized_bikes' table");
     })
 
-  const insertSpecializedBikesQuery = 'INSERT INTO specialized_bikes VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const insertSpecializedBikesQuery = 'INSERT INTO specialized_bikes VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
   for (let bikespec of specialized_bikes) {
     let bikeSpecData = [
       bikespec.brand_name,
+      bikespec.name,
       bikespec.type,
       bikespec.category,
       bikespec.size,
@@ -251,7 +261,7 @@ db.serialize(() => {
     ];
     db.run(insertSpecializedBikesQuery, bikeSpecData, error=> {
       if (error) console.log(
-        "Could not insert into specialized_bikes table", [bikespec.brand_name, bikespec.type, bikespec.category, bikespec.size, bikespec.color, bikespec.material, bikespec.component], error);
+        "Could not insert into specialized_bikes table", [bikespec.brand_name, bikespec.name, bikespec.type, bikespec.category, bikespec.size, bikespec.color, bikespec.material, bikespec.component], error);
       else console.log(`Inserted bike into specialized_bikes table`);
     })
   }
@@ -265,16 +275,17 @@ db.serialize(() => {
   })
 
   const createTrekBikesTableQuery =
-    'CREATE TABLE trek_bikes (brand_name TEXT, type TEXT, category TEXT, size TEXT, color TEXT, material TEXT, component TEXT)';
+    'CREATE TABLE trek_bikes (brand_name TEXT, name TEXT, type TEXT, category TEXT, size TEXT, color TEXT, material TEXT, component TEXT)';
   db.run(createTrekBikesTableQuery, error => {
     if (error) console.error("Error creating 'trek_bikes' table");
     else console.log("Created 'trek_bikes' table");
   })
 
-  const insertTrekBikesQuery = 'INSERT INTO trek_bikes VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const insertTrekBikesQuery = 'INSERT INTO trek_bikes VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
   for (let bikespec of trek_bikes) {
     let bikeSpecData = [
       bikespec.brand_name,
+      bikespec.name,
       bikespec.type,
       bikespec.category,
       bikespec.size,
@@ -284,7 +295,7 @@ db.serialize(() => {
     ];
     db.run(insertTrekBikesQuery, bikeSpecData, error => {
       if (error) console.log(
-        "Could not insert into trek_bikes table", [bikespec.brand_name, bikespec.type, bikespec.category, bikespec.size, bikespec.color, bikespec.material, bikespec.component], error);
+        "Could not insert into trek_bikes table", [bikespec.brand_name, bikespec.name, bikespec.type, bikespec.category, bikespec.size, bikespec.color, bikespec.material, bikespec.component], error);
       else console.log(`Inserted bike into trek_bikes table`);
     })
   }
@@ -298,16 +309,17 @@ db.serialize(() => {
   })
 
   const createCannondaleBikesTableQuery =
-    'CREATE TABLE cannondale_bikes (brand_name TEXT, type TEXT, category TEXT, size TEXT, color TEXT, material TEXT, component TEXT)';
+    'CREATE TABLE cannondale_bikes (brand_name TEXT, name TEXT, type TEXT, category TEXT, size TEXT, color TEXT, material TEXT, component TEXT)';
   db.run(createCannondaleBikesTableQuery, error => {
     if (error) console.error("Error creating 'cannondale_bikes' table");
     else console.log("Created 'cannondale_bikes' table");
   })
 
-  const insertCannondaleBikesQuery = 'INSERT INTO cannondale_bikes VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const insertCannondaleBikesQuery = 'INSERT INTO cannondale_bikes VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
   for (let bikespec of cannondale_bikes) {
     let bikeSpecData = [
       bikespec.brand_name,
+      bikespec.name,
       bikespec.type,
       bikespec.category,
       bikespec.size,
@@ -317,7 +329,7 @@ db.serialize(() => {
     ];
     db.run(insertCannondaleBikesQuery, bikeSpecData, error => {
       if (error) console.log(
-        "Could not insert into cannondale_bikes table", [bikespec.brand_name, bikespec.type, bikespec.category, bikespec.size, bikespec.color, bikespec.material, bikespec.component], error);
+        "Could not insert into cannondale_bikes table", [bikespec.brand_name, bikespec.name, bikespec.type, bikespec.category, bikespec.size, bikespec.color, bikespec.material, bikespec.component], error);
       else console.log(`Inserted bike into cannondale_bikes table`);
     })
   }

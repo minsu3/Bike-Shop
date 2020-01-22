@@ -1,16 +1,30 @@
 import React, { Component } from "react";
+import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 class SpecializedBikes extends Component {
-  render() {
+  render() { 
     return (
       <div className="specs">
-        <p> {this.props.bikespec.brand_name} </p>
+
+        <img src={this.props.img} />
+
+        <Nav.Link>
+          <p>{this.props.bikespec.brand_name} {this.props.bikespec.name}</p>
+        </Nav.Link>
+        <p>______________________________</p>
         <p> {this.props.bikespec.type} </p>
         <p> {this.props.bikespec.category} </p>
         <p> {this.props.bikespec.size} </p>
         <p> {this.props.bikespec.color} </p>
         <p> {this.props.bikespec.material} </p>
         <p> {this.props.bikespec.component} </p>
+
+
+        <ButtonToolbar className="buynow">
+          <Button variant="dark">Buy Now</Button>
+        </ButtonToolbar>
       </div>
     );
   }

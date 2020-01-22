@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import fetchSpecialized from "../model/fetchSpecialized";
 import Specialized from "../components/Specialized";
+import specialized from "../images/specialized.png";
 
 class SpecializedContainer extends Component {
   state = {
@@ -22,11 +23,16 @@ class SpecializedContainer extends Component {
     if (this.state.bikemakes) {
       indexList = this.state.bikemakes.map((bikemake, index) => {
         return (
-          <Specialized
-            bikemake={bikemake}
-            key={index}
-            fetchData={this.fetchData}
-          />
+          <div>
+            <Specialized
+              bikemake={bikemake}
+              key={index}
+              fetchData={this.fetchData}
+              img ={specialized}
+              alt="specializedbrand"
+              className="specialized"
+            />
+          </div>
         );
       });
     }

@@ -10,7 +10,7 @@ class Home extends Component {
         return (
           <div className="Home">
 
-            <img src={sworks} alt="banner" />
+            <img src={sworks} alt="banner" className="sworks"/>
 
             <h1 id="venge">The All New S-Works Venge</h1>
 

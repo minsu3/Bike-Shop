@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import shoppingcart from "../images/shoppingcart.png";
+import retailmarker from "../images/retailmarker.png";
 
 const navStyle = {
   position: "fixed",
@@ -12,38 +14,39 @@ const navStyle = {
 class Header extends Component {
   render() { 
     return (
-        <div style={navStyle}>
-          <Navbar variant="dark" className="color-nav">
-            <Nav id="first">
-              <Nav.Link href={"/newsletter"} className="light">
-                Subscribe
-              </Nav.Link>
-              <Nav.Link href={"/findretailer"} className="light">
-                Find a retailer
-              </Nav.Link>
-              <Nav.Link href={"/userauth"} className="light">
-                Sign in
-              </Nav.Link>
-            </Nav>
-          </Navbar>
+      <div style={navStyle}>
+        <Navbar variant="dark" className="color-nav">
+          <Nav id="first">
+            <Nav.Link href={"/newsletter"} className="light">
+              Subscribe to our Newsletter
+            </Nav.Link>
+            <Nav.Link href={"/findretailer"} className="findretailer">
+              <img src={retailmarker} alt="retailmarker" className="retailmarker" />
+              Find a retailer
+            </Nav.Link>
+            <Nav.Link href={"/userauth"} className="signin">
+              Sign in
+            </Nav.Link>
+          </Nav>
+        </Navbar>
 
-          <Navbar bg="light" variant="light" className="nextbar">
-            <Navbar.Brand href={"/home"} id="brand">
-              REACT BIKE SHOP
-            </Navbar.Brand>
-            <Nav id="second">
-              <Nav.Link href={"/bikes"} className="next">
-                BIKES
-              </Nav.Link>
-              {/* <Nav.Link href={"/bikes/specs"} className="next">
-                BIKES SPECS
-              </Nav.Link> */}
-              <Nav.Link href={"/aboutus"} className="next">
-                ABOUT US
-              </Nav.Link>
-            </Nav>
-          </Navbar>
-        </div>
+        <Navbar bg="light" variant="light" className="nextbar">
+          <Navbar.Brand href={"/home"} id="brand">
+            REACT BIKE SHOP
+          </Navbar.Brand>
+          <Nav id="second">
+            <Nav.Link href={"/bikes"} className="next">
+              Bike Brands
+            </Nav.Link>
+            <Nav.Link href={"/aboutus"} className="aboutus">
+              About Us
+            </Nav.Link>
+          </Nav>
+          <Nav.Link href={"/shoppingcart"}>
+            <img src={shoppingcart} alt="shoppingcart" className="shopping" />
+          </Nav.Link>
+        </Navbar>
+      </div>
     );
   }
 }
