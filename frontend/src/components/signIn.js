@@ -23,7 +23,7 @@ class signIn extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <auth />
         <NavBar currentUser={this.state.currentUser} logout={this.logout} />
         <div className="container">
@@ -32,7 +32,7 @@ class signIn extends Component {
             setCurrentUser={this.setCurrentUser}
           />
         </div>
-      </div>
+      </>
     );
   }
 }

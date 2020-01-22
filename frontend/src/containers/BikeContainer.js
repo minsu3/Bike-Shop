@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
-import Bikes from '../components/Bikes';
+import SpecializedContainer from './SpecializedContainer';
+import TrekContainer from './TrekContainer';
+import CannondaleContainer from './CannondaleContainer';
 
 class BikeContainer extends Component {
   render() {
-    return (
-      <div>
-        <Bikes />
-      </div>
+    return(
+      <>
+        <SpecializedContainer />
+        <TrekContainer />
+        <CannondaleContainer />
+      </>
     )
   }
 }

@@ -12,7 +12,6 @@ const navStyle = {
 class Header extends Component {
   render() { 
     return (
-      <div>
         <div style={navStyle}>
           <Navbar variant="dark" className="color-nav">
             <Nav id="first">
@@ -36,13 +35,15 @@ class Header extends Component {
               <Nav.Link href={"/bikes"} className="next">
                 BIKES
               </Nav.Link>
+              {/* <Nav.Link href={"/bikes/specs"} className="next">
+                BIKES SPECS
+              </Nav.Link> */}
               <Nav.Link href={"/aboutus"} className="next">
                 ABOUT US
               </Nav.Link>
             </Nav>
           </Navbar>
         </div>
-      </div>
     );
   }
 }
