@@ -212,7 +212,7 @@ app.get("/api/specialized/:id", (req, res) => {
 //         `Successfully created bike make ${req.body.brand} `
 //       );
 //       res.sendStatus(200);
-//     }
+//     } 
 //   });
 // });
 
@@ -283,17 +283,18 @@ app.get("/api/cannondalebikes", (req, res) => {
   });
 });
 
-// app.get("/api/bikespecs/:id", (req, res) => {
-//   const specId = req.params.id;
-//   const getOneSpec = `SELECT * FROM bike_specs WHERE bike_specs.oid = ?`;
+// Get one
+app.get("/api/specializedbikes/:id", (req, res) => {
+  const specId = req.params.id;
+  const getOneSpecializedBike = `SELECT * FROM specialized_bikes WHERE specialized_bikes.oid = ?`;
 
-//   db.all(getOneSpec, [specId], (error, results) => {
-//     if (error) {
-//       console.log("Failed to retrieve a bike spec from table", error);
-//       res.sendStatus(500);
-//     } else res.status(200).json(results);
-//   });
-// });
+  db.get(getOneSpecializedBike, [specId], (error, results) => {
+    if (error) {
+      console.log("Failed to retrieve one specialized bike from table", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
 
 // app.post("/api/bikespecs", (req, res) => {
 //   const reqBody = [

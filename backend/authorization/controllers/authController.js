@@ -123,7 +123,7 @@ const login = (req, res) => {
         }
       });
     });
-};
+  };
 
 // POST Logout Route
 const logout = (req, res) => {

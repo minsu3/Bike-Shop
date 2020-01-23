@@ -8,7 +8,6 @@ class Specialized extends Component {
         <h3>
           <Nav.Link href={"/bikes/specialized"}>
             {this.props.bikemake.brand}
-            {/* <img src={this.props.img} /> */}
           </Nav.Link>
         </h3>
       </div>

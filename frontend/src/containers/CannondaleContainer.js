@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import fetchCannondale from "../model/fetchCannondale";
 import Cannondale from "../components/Cannondale";
+import cannondale from "../images/cannondale.jpeg";
 
 class CannondaleContainer extends Component {
   state = {
@@ -22,11 +23,14 @@ class CannondaleContainer extends Component {
     if (this.state.bikemakes) {
       indexList = this.state.bikemakes.map((bikemake, index) => {
         return (
-          <Cannondale
-            bikemake={bikemake}
-            key={index}
-            fetchData={this.fetchData}
-          />
+          <div>
+            <img src={cannondale} alt="brand" className="cannondale" />
+            <Cannondale
+              bikemake={bikemake}
+              key={index}
+              fetchData={this.fetchData}
+            />
+          </div>
         );
       });
     }

@@ -24,13 +24,12 @@ class SpecializedContainer extends Component {
       indexList = this.state.bikemakes.map((bikemake, index) => {
         return (
           <div>
+            <img src={specialized} alt="brand" className="specialized" />
             <Specialized
               bikemake={bikemake}
               key={index}
               fetchData={this.fetchData}
-              img ={specialized}
               alt="specializedbrand"
-              className="specialized"
             />
           </div>
         );

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import fetchTrek from "../model/fetchTrek";
 import Trek from "../components/Trek";
+import trek from "../images/trek.png";
+
 
 class TrekContainer extends Component {
   state = {
@@ -22,11 +24,15 @@ class TrekContainer extends Component {
     if (this.state.bikemakes) {
       indexList = this.state.bikemakes.map((bikemake, index) => {
         return (
-          <Trek
-            bikemake={bikemake}
-            key={index}
-            fetchData={this.fetchData}
-          />
+          <div>
+            <img src={trek} alt="brand" className="trek" />
+
+            <Trek
+              bikemake={bikemake}
+              key={index}
+              fetchData={this.fetchData}
+            />
+          </div>
         );
       });
     }

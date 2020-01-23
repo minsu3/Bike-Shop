@@ -32,11 +32,11 @@ class Header extends Component {
 
         <Navbar bg="light" variant="light" className="nextbar">
           <Navbar.Brand href={"/home"} id="brand">
-            REACT BIKE SHOP
+            REACT BICYCLE SHOP
           </Navbar.Brand>
           <Nav id="second">
             <Nav.Link href={"/bikes"} className="next">
-              Bike Brands
+              Bikes
             </Nav.Link>
             <Nav.Link href={"/aboutus"} className="aboutus">
               About Us

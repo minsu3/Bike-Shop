@@ -7,8 +7,8 @@ class SpecializedBikes extends Component {
   render() {
     return (
         <div className="specs">
-        <img src={this.props.img} />
         <Nav.Link>
+        <img src={this.props.img} />
           <p> {this.props.bikespec.brand_name} {this.props.bikespec.name}</p>
         </Nav.Link>
           <p> {this.props.bikespec.type} </p>
@@ -19,7 +19,9 @@ class SpecializedBikes extends Component {
           <p> {this.props.bikespec.component} </p>
           <ButtonToolbar className="buynow">
             <Button variant="dark" >
+              <Nav.Link>
                 Buy Now
+              </Nav.Link>
             </Button>
           </ButtonToolbar>
         </div>

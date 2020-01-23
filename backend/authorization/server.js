@@ -16,10 +16,9 @@ app.use((req, res, next) => {
   const url = req.url;
   const method = req.method;
   const requestedAt = new Date().toLocaleString();
-  console.log(`URL:${url} -  METHOD:${method} - AT:${requestedAt}`);
+  console.log( `URL:${url} -  METHOD:${method} - AT:${requestedAt}`);
   next();
 });
-
 
 
 const corsOptions = {
