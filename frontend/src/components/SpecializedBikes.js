@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import Venge from "./Venge";
+// import Venge from "./Venge";
 
 class SpecializedBikes extends Component {
   render() { 

@@ -10,7 +10,7 @@ import CannondaleBikesContainer from "../containers/CannondaleBikesContainer";
 import aboutPage from '../components/aboutPage';
 import shoppingCart from '../components/shoppingCart';
 import BikeContainer from '../containers/BikeContainer';
-import Venge from '../components/Venge';
+// import Venge from '../components/Venge';
 
 export default (
   <div>

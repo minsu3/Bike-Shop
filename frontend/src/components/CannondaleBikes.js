@@ -8,7 +8,7 @@ class CannondaleBikes extends Component {
     return (
       <div className="specs">
       <Nav.Link>
-      <img src={this.props.img} />
+      <img src={this.props.img} alt="cannondale"/>
         <p> {this.props.bikespec.brand_name} {this.props.bikespec.name}</p>
       </Nav.Link>
         <p>---------</p>

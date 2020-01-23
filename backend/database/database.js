@@ -17,6 +17,26 @@ const createTableUsersQuery =
   )`;
 
 // Bike Make Table
+const createTableBikeMakeQuery =
+  `CREATE TABLE IF NOT EXISTS bike_make (
+    brand TEXT,
+    type TEXT,
+    category TEXT
+  )`
+// Bike Specs Table
+const createTableBikeSpecsQuery =
+  `CREATE TABLE IF NOT EXISTS bike_specs (
+    brand_id INTEGER, 
+    size TEXT,
+    color TEXT,
+    material TEXT, 
+    serial_number INTEGER, 
+    component TEXT
+  )`
+
+
+ //                                                ************* FOR THE SAKE OF PRESENTATION *************
+
 const createTableSpecializedQuery = 
   `CREATE TABLE IF NOT EXISTS specialized (
     brand TEXT
@@ -29,8 +49,6 @@ const createTableCannondaleQuery =
   `CREATE TABLE IF NOT EXISTS cannondale (
     brand TEXT
   )`
-
-
 const createSpecializedBikeQuery = 
   `CREATE TABLE IF NOT EXISTS specialized_bikes (
     brand_name TEXT,
@@ -64,7 +82,10 @@ const createCannondaleBikeQuery =
     material TEXT, 
     component TEXT
   )`
-// Order (join table)
+
+//                                                        ************* Order (join table) *************
+
+
 const createTableOrdersQuery = 
   `CREATE TABLE IF NOT EXISTS orders (
     users_id INTEGER,

@@ -59,6 +59,7 @@ class TrekBikesContainer extends Component {
           );
         }
       });
+      return
     }
     return <div>{indexLists}</div>;
   }

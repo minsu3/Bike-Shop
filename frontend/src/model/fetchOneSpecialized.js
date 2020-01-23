@@ -1,4 +1,4 @@
-const endpoint = "http://localhost:9000/api/specializedbikes/:id";
+const endpoint = "http://localhost:9000/api/specialized_bikes/:id";
 
 class fetchOneSpecialized {
   static getOne = rowid => {
@@ -13,6 +13,5 @@ class fetchOneSpecialized {
       .catch(err => console.log("Could not get bike make \n", err));
   };
 } 
-
 
 export default fetchOneSpecialized

@@ -12,27 +12,69 @@ const users = [
     zip_code: "12345",
     phone_number: "0123456789",
     registration_date: "2019-01-01"
+  },
+  {
+    first_name: "Dann",
+    last_name: "Dann",
+    email: "Dann@gmail.com",
+    street_number: "111",
+    street_name: "Dann Dr.",
+    city: "Dann",
+    state: "SF",
+    zip_code: "12346",
+    phone_number: "0123456789",
+    registration_date: "2019-02-02"
   }
 ];
 
+const bikes_make_list = [
+  {
+    brand: "Brand",
+    type: "Type",
+    category: "Category"
+  },
+  {
+    brand: "Second Brand",
+    type: "Second Type",
+    category: "Second Category"
+  }
+]
+
+const bike_specs_list = [
+  {
+    brand_id: "1",
+    size: "Medium",
+    color: "Blue",
+    material: "Aluminum",
+    serial_number: "12345",
+    component: "Shimano"
+  },
+  {
+    brand_id: "2",
+    size: "Large",
+    color: "Red",
+    material: "Aluminum",
+    serial_number: "12345",
+    component: "Campagnolo"
+  }
+]
+
+//                                     ************** for presentation *************** 
 const specialized = [
   {
     brand: "Specialized"
   }
 ]
-
 const trek = [
   {
     brand: "Trek"
   }
 ]
-
 const cannondale = [
   {
     brand: "Cannondale"
   }
 ]
-
 const specialized_bikes = [
   {
     brand_name: specialized[0].brand,
@@ -65,7 +107,6 @@ const specialized_bikes = [
     component: "Sram"
   }
 ]
-
 const trek_bikes = [
   {
     brand_name: trek[0].brand,
@@ -98,7 +139,6 @@ const trek_bikes = [
     component: "Shimano"
   }
 ]
-
 const cannondale_bikes = [
   {
     brand_name: cannondale[0].brand,
@@ -161,6 +201,61 @@ db.serialize(() => {
     })
   }
 
+
+  // Drop, Create, Insert Bikes Makes list and table 
+  const dropBikeMakeTableQuery = 'DROP TABLE IF EXISTS bike_make';
+  db.run(dropBikeMakeTableQuery, error => {
+    if (error) console.error("Error dropping 'bike_make' table");
+    else console.log("Dropped 'bike_make' table");
+  })
+
+  const createBikeMakeTableQuery =
+    'CREATE TABLE bike_make (brand TEXT, type TEXT, category TEXT)'
+  db.run(createBikeMakeTableQuery, error => {
+    if (error) console.error("Error creating 'bike_make' table");
+    else console.log("Created 'bike_make' table");
+  })
+
+  const insertBikeMakeQuery = 'INSERT INTO bike_make VALUES (?, ?, ?)';
+  for (let bikemake of bikes_make_list) {
+    let bikeMakeData = [bikemake.brand, bikemake.type, bikemake.category];
+    db.run(insertBikeMakeQuery, bikeMakeData, error => {
+      if (error) console.log("Could not insert into bike_make table", [bikemake.brand, bikemake.type, bikemake.category], error);
+      else console.log(`Inserted bike into bike_make table`);
+    })
+  }
+
+  // Drop, Create, Insert Bike Specs table
+  const dropBikeSpecsTableQuery = 'DROP TABLE IF EXISTS bike_specs';
+  db.run(dropBikeSpecsTableQuery, error => {
+    if (error) console.error("Error dropping 'bike_specs' table");
+    else console.log("Dropped 'bike_specs' table");
+  })
+
+  const createBikeSpecsTableQuery =
+    'CREATE TABLE bike_specs (brand_id INTEGER, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
+  db.run(createBikeSpecsTableQuery, error => {
+    if (error) console.error("Error creating 'bike_specs' table");
+    else console.log("Created 'bike_specs' table");
+  })
+
+  const insertBikeSpecsQuery = 'INSERT INTO bike_specs VALUES (?, ?, ?, ?, ?, ?)';
+  for (let bikespec of bike_specs_list) {
+    let bikeSpecData = [bikespec.brand_id, bikespec.size, bikespec.color, bikespec.material, bikespec.serial_number, bikespec.component];
+    db.run(insertBikeSpecsQuery, bikeSpecData, error => {
+      if (error) console.log("Could not insert into bike_specs table", [bikespec.brand_id, bikespec.size, bikespec.color, bikespec.material, bikespec.serial_number, bikespec.component], error);
+      else console.log(`Inserted bike into bike_specs table`);
+    })
+  }
+
+
+
+
+//                               *********** THIS WILL BE JUST FOR THE PRESENTATION AND NOT FOR THE FINISHED PRODUCT **************
+
+
+
+
   // Drop, Create, Insert specialized 
   const dropSpecializedTableQuery = 'DROP TABLE IF EXISTS specialized';
   db.run(dropSpecializedTableQuery, error=> {
@@ -183,7 +278,6 @@ db.serialize(() => {
       else console.log(`Inserted brand into specialized table`);
     })
   }
-
 
   // Drop, Create, Insert trek 
   const dropTrekTableQuery = 'DROP TABLE IF EXISTS trek';
@@ -208,7 +302,6 @@ db.serialize(() => {
     })
   }
 
-
   // Drop, Create, Insert cannondale 
   const dropCannondaleTableQuery = 'DROP TABLE IF EXISTS cannondale';
   db.run(dropCannondaleTableQuery, error => {
@@ -232,7 +325,6 @@ db.serialize(() => {
     })
   }
   
-
   // Drop, Create, Insert specialized_bikes table
   const dropBikeSpecializedBikesTableQuery = 'DROP TABLE IF EXISTS specialized_bikes';
   db.run(dropBikeSpecializedBikesTableQuery, error=> {
@@ -265,7 +357,6 @@ db.serialize(() => {
       else console.log(`Inserted bike into specialized_bikes table`);
     })
   }
-
 
   // Drop, Create, Insert trek_bikes table
   const dropBikeTrekBikesTableQuery = 'DROP TABLE IF EXISTS trek_bikes';
@@ -300,7 +391,6 @@ db.serialize(() => {
     })
   }
 
-
   // Drop, Create, Insert cannondale_bikes table
   const dropBikeCannondaleBikesTableQuery = 'DROP TABLE IF EXISTS cannondale_bikes';
   db.run(dropBikeCannondaleBikesTableQuery, error => {
@@ -333,6 +423,13 @@ db.serialize(() => {
       else console.log(`Inserted bike into cannondale_bikes table`);
     })
   }
+
+
+
+
+//                                                          **************** UP TO HERE ***************** //
+
+
 
 
   // JOIN TABLES: ORDERS TABLE

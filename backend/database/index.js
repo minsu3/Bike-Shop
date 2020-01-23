@@ -151,7 +151,12 @@ app.delete("/api/users/:id", (req, res) => {
   // })
 });
 
-// BIKE MAKE
+
+
+
+
+// EACH BRANDS
+
 
 app.get("/api/specialized", (req, res) => {
   const getAllSpecialized = "SELECT * FROM specialized";
@@ -185,72 +190,7 @@ app.get("/api/cannondale", (req, res) => {
   });
 });
 
-app.get("/api/specialized/:id", (req, res) => {
-  const makeId = req.params.id;
-  const getOneMake = `SELECT * FROM bike_make WHERE bike_make.oid = ?`;
-
-  db.all(getOneMake, [makeId], (error, results) => {
-    if (error) {
-      console.log("Failed to retrieve a bike make from table", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-// app.post("/api/bikemake", (req, res) => {
-//   const reqBody = [req.body.brand];
-//   const insertNewMake = "INSERT INTO bike_make (?)";
-
-//   db.run(insertNewMake, reqBody, error => {
-//     if (error) {
-//       console.log(
-//         `Failed to create bike make: ${req.body.brand}`
-//       );
-//       res.sendStatus(500);
-//     } else {
-//       console.log(
-//         `Successfully created bike make ${req.body.brand} `
-//       );
-//       res.sendStatus(200);
-//     } 
-//   });
-// });
-
-// app.put("/api/bikemake/:id", (req, res) => {
-//   const makeId = req.params.id;
-//   const updateMake = `
-//     UPDATE bike_make SET 
-//       BRAND = ?,
-//     WHERE bike_make.oid = ${makeId}`;
-
-//   db.run(updateMake, [req.body.brand], error => {
-//       if (error) {
-//         console.log(`Failed to update bike make`, error);
-//         res.sendStatus(500);
-//       } else {
-//         console.log(`Successfully updated bike make`);
-//         res.sendStatus(200);
-//       }
-//     }
-//   );
-// });
-
-// app.delete("/api/bikemake/:id", (req, res) => {
-//   const makeId = [req.params.id];
-//   const deleteMake = `DELTE FROM bike_make WHERE ? = bike_make.oid`;
-
-//   db.run(deleteMake, makeId, error => {
-//     if (error) {
-//       console.log(`Failed to delete from make with id of ${makeId}`);
-//       res.sendStatus(500);
-//     } else {
-//       console.log(`Successfully deleted make with id of ${makeId}`);
-//       res.sendStatus(200);
-//     }
-//   });
-// });
-
-// BIKE SPECS
+// INDIVIDUAL BICYCLES
 
 app.get("/api/specializedbikes", (req, res) => {
   const getAllSpecializedBikes = "SELECT * FROM specialized_bikes";
@@ -258,26 +198,6 @@ app.get("/api/specializedbikes", (req, res) => {
   db.all(getAllSpecializedBikes, (error, results) => {
     if (error) {
       console.log("Get all specialized bikes table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-app.get("/api/trekbikes", (req, res) => {
-  const getAllTrekBikes = "SELECT * FROM trek_bikes";
-
-  db.all(getAllTrekBikes, (error, results) => {
-    if (error) {
-      console.log("Get all trek bikes table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-app.get("/api/cannondalebikes", (req, res) => {
-  const getAllCannondaleBikes = "SELECT * FROM cannondale_bikes";
-
-  db.all(getAllCannondaleBikes, (error, results) => {
-    if (error) {
-      console.log("Get all cannnondle bikes table failed", error);
       res.sendStatus(500);
     } else res.status(200).json(results);
   });
@@ -296,79 +216,220 @@ app.get("/api/specializedbikes/:id", (req, res) => {
   });
 });
 
-// app.post("/api/bikespecs", (req, res) => {
-//   const reqBody = [
-//     req.body.brand_name,
-//     req.body.type,
-//     req.body.category,
-//     req.body.size,
-//     req.body.color,
-//     req.body.material,
-//     req.body.component
-//   ];
-//   const insertNewSpec = "INSERT INTO bike_specs (?, ?, ?, ?, ?, ?, ?)";
+// THIS ONE WORKS
+app.get("/api/specialized_bikes/:id", (req, res) => {
+  const makeId = req.params.id;
+  const getOneMake = `SELECT * FROM specialized_bikes WHERE specialized_bikes.oid = ?`;
 
-//   db.run(insertNewSpec, reqBody, error => {
-//     if (error) {
-//       console.log(`Failed to create a bike spec.`);
-//       res.sendStatus(500);
-//     } else {
-//       console.log(`Successfully created a bike spec.`);
-//       res.sendStatus(200);
-//     }
-//   });
-// });
+  db.all(getOneMake, [makeId], (error, results) => {
+    if (error) {
+      console.log("Failed to retrieve a bike make from table", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
 
-// app.put("/api/bikespecs/:id", (req, res) => {
-//   const specId = req.params.id;
-//   const updateSpec = `
-//     UPDATE bike_specs SET 
-//       BRAND_NAME = ?,
-//       TYPE = ?,
-//       CATEGORY = ?
-//       SIZE = ?,
-//       COLOR = ?,
-//       MATERIAL = ?
-//       COMPONENT = ?
-//     WHERE bike_specs.oid = ${specId}`;
+app.get("/api/trekbikes", (req, res) => {
+  const getAllTrekBikes = "SELECT * FROM trek_bikes";
 
-//   db.run(
-//     updateSpec,
-//     [
-//       req.body.brand_name,
-//       req.body.type,
-//       req.body.category,
-//       req.body.size,
-//       req.body.color,
-//       req.body.material,
-//       req.body.component
-//     ],
-//     error => {
-//       if (error) {
-//         console.log(`Failed to update bike spec`, error);
-//         res.sendStatus(500);
-//       } else {
-//         console.log(`Successfully updated bike spec`);
-//         res.sendStatus(200);
-//       }
-//     }
-//   );
-// });
+  db.all(getAllTrekBikes, (error, results) => {
+    if (error) {
+      console.log("Get all trek bikes table failed", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
 
-// app.delete("/api/bikespecs/:id", (req, res) => {
-//   const specId = [req.params.id];
-//   const deleteSpec = `DELTE FROM bike_specs WHERE ? = bike_specs.oid`;
+app.get("/api/cannondalebikes", (req, res) => {
+  const getAllCannondaleBikes = "SELECT * FROM cannondale_bikes";
 
-//   db.run(deleteSpec, specId, error => {
-//     if (error) {
-//       console.log(`Failed to delete a spec with id of ${specId}`);
-//       res.sendStatus(500);
-//     } else {
-//       console.log(`Successfully deleted a spec with id of ${specId}`);
-//       res.sendStatus(200);
-//     }
-//   });
-// });
+  db.all(getAllCannondaleBikes, (error, results) => {
+    if (error) {
+      console.log("Get all cannnondle bikes table failed", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
+
+//                                                          ************* BIKE MAKE *************
+app.get("/api/bike_make", (req, res) => {
+  const getAllBikeMakes = "SELECT * FROM bike_make";
+
+  db.all(getAllBikeMakes, (error, results) => {
+    if (error) {
+      console.log("Get all bike makes table failed", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
+
+app.get("/api/bike_make/:id", (req, res) => {
+  const makeId = req.params.id;
+  const getOneMake = `SELECT * FROM bike_make WHERE bike_make.oid = ?`;
+
+  db.all(getOneMake, [makeId], (error, results) => {
+    if (error) {
+      console.log("Failed to retrieve a bike make from table", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
+
+app.post("/api/bike_make", (req, res) => {
+  console.log("HELLO WORLD")
+  const reqBody = [req.body.brand, req.body.type, req.body.category];
+  const insertNewMake = "INSERT INTO bike_make VALUES (?, ?, ?)";
+
+  db.run(insertNewMake, reqBody, error => {
+    if (error) {
+      console.log(
+        `Failed to create bike make: ${req.body.brand}`
+      );
+      res.sendStatus(500);
+    } else {
+      console.log(
+        `Successfully created bike make ${req.body.brand} `
+      );
+      res.sendStatus(200);
+    }
+  });
+});
+
+app.put("/api/bike_make/:id", (req, res) => {
+  const makeId = req.params.id;
+  const reqBody = [req.body.brand, req.body.type, req.body.category];
+  const updateMake = `
+    UPDATE bike_make SET 
+      BRAND = ?,
+      TYPE = ?,
+      CATEGORY = ?
+    WHERE bike_make.oid = ${makeId}`;
+
+  db.run(updateMake, reqBody, error => {
+    if (error) {
+      console.log(`Failed to update bike make`, error);
+      res.sendStatus(500);
+    } else {
+      console.log(`Successfully updated bike make`);
+      res.sendStatus(200);
+    }
+  }
+  );
+});
+
+app.delete("/api/bike_make/:id", (req, res) => {
+  const makeId = [req.params.id];
+  const deleteMake = `DELETE FROM bike_make WHERE ? = bike_make.oid`;
+
+  db.run(deleteMake, makeId, error => {
+    if (error) {
+      console.log(`Failed to delete from make with id of ${makeId}`);
+      res.sendStatus(500);
+    } else {
+      console.log(`Successfully deleted make with id of ${makeId}`);
+      res.sendStatus(200);
+    }
+  });
+});
+
+
+//                                                          ************* BIKE SPECS *************
+
+
+
+app.get("/api/bikespecs", (req, res) => {
+  const getAllBikeSpecs = "SELECT * FROM bike_specs";
+
+  db.all(getAllBikeSpecs, (error, results) => {
+    if (error) {
+      console.log("Get all bike specs table failed", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
+
+app.get("/api/bikespecs/:id", (req, res) => {
+  const specId = req.params.id;
+  const getOneSpec = `SELECT * FROM bike_specs WHERE bike_specs.oid = ?`;
+
+  db.all(getOneSpec, [specId], (error, results) => {
+    if (error) {
+      console.log("Failed to retrieve a bike spec from table", error);
+      res.sendStatus(500);
+    } else res.status(200).json(results);
+  });
+});
+
+app.post("/api/bikespecs", (req, res) => {
+  const reqBody = [
+    req.body.brand_id,
+    req.body.size,
+    req.body.color,
+    req.body.material,
+    req.body.serial_number,
+    req.body.component,
+  ];
+  const insertNewSpec = "INSERT INTO bike_specs VALUES (?, ?, ?, ?, ?, ?)";
+
+  db.run(insertNewSpec, reqBody, error => {
+    if (error) {
+      console.log(`Failed to create a bike spec.`);
+      res.sendStatus(500);
+    } else {
+      console.log(`Successfully created a bike spec.`);
+      res.sendStatus(200);
+    }
+  });
+});
+
+app.put("/api/bikespecs/:id", (req, res) => {
+  const specId = req.params.id;
+  const updateSpec = `
+    UPDATE bike_specs SET 
+      BRAND_ID = ?,
+      SIZE = ?,
+      COLOR = ?,
+      MATERIAL = ?,
+      SERIAL_NUMBER = ?,
+      COMPONENT = ?
+    WHERE bike_specs.oid = ${specId}`;
+
+  db.run(
+    updateSpec,
+    [
+      req.body.brand_id,
+      req.body.size,
+      req.body.color,
+      req.body.material,
+      req.body.serial_number,
+      req.body.component
+    ],
+    error => {
+      if (error) {
+        console.log(`Failed to update bike spec`, error);
+        res.sendStatus(500);
+      } else {
+        console.log(`Successfully updated bike spec`);
+        res.sendStatus(200);
+      }
+    }
+  );
+});
+
+app.delete("/api/bikespecs/:id", (req, res) => {
+  const specId = [req.params.id];
+  const deleteSpec = `DELETE FROM bike_specs WHERE ? = bike_specs.oid`;
+
+  db.run(deleteSpec, specId, error => {
+    if (error) {
+      console.log(`Failed to delete a spec with id of ${specId}`);
+      res.sendStatus(500);
+    } else {
+      console.log(`Successfully deleted a spec with id of ${specId}`);
+      res.sendStatus(200);
+    }
+  });
+});
 
 // ORDERS JOIN TABLE
 

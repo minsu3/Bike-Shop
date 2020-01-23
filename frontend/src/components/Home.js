@@ -3,7 +3,7 @@ import sworks from "../images/sworks.jpg";
 import reactbike from "../images/reactbike.png";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import riding from "../images/riding.mp4";
+// import riding from "../images/riding.mp4";
 
 class Home extends Component {
     render() {
