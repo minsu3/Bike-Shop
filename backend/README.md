@@ -1,3 +1,3 @@
 # Entity Relationship Diagram
 
-![bikeshoppingapi](./erd.png)
+![bikeshoppingapi](./dataentity.jpg)
