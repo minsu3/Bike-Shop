@@ -153,8 +153,6 @@ app.delete("/api/users/:id", (req, res) => {
 
 
 
-
-
 // EACH BRANDS
 
 

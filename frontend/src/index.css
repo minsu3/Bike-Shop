@@ -22,13 +22,29 @@ code {
     color: white;
 }
 
-h1 {
+#ridebikes {
     color: white;
     position: absolute;
-    top: 30%;
-    left: 23%;
+    top: 350px;
+    left: 700px;
     transform: translate(-50%, -50%);
-    font-family: 'Big Shoulders Text';
+    font-family: 'Anton';
+}
+#havefun {
+    color: white;
+    position: absolute;
+    top: 400px;
+    left: 700px;
+    transform: translate(-50%, -50%);
+    font-family: 'Anton';
+}
+#feelgood {
+    color: white;
+    position: absolute;
+    top: 450px;
+    left: 700px;
+    transform: translate(-50%, -50%);
+    font-family: 'Anton';
 }
 
 h2 {
@@ -93,8 +109,8 @@ h2 {
 #reactbike {
     color: white;
     position: absolute;
-    top: 30%;
-    left: 7%;
+    top: 20%;
+    left: 5%;
     transform: translate(-50%, -50%);
     width: 10%;
     height: 10%;
@@ -140,8 +156,8 @@ auth {
 
 #shopnow {
     position: absolute;
-    top: 38%;
-    left: 20%;
+    top: 520px;
+    left: 700px;
     transform: translate(-50%, -50%);
     width: 8%;
     height: 1.5;
@@ -229,4 +245,9 @@ footer {
     position: relative;
     height: -10px;
     left: -600px;
+}
+
+.videoTag {
+    width: 100%;
+    height: 100%;
 }

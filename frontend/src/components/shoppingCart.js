@@ -25,7 +25,7 @@ class shoppingCart extends Component {
     render() {
         return (
             <div>
-                <h2>Shopping Cart</h2>
+                <h2>Buy something pls</h2>
             </div>
         )
     }
