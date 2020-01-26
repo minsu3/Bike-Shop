@@ -16,16 +16,17 @@ const createTableUsersQuery =
     registration_date DATE
   )`;
 
-// Bike Make Table
+//                                                        ************* Bike Make Table *************
 const createTableBikeMakeQuery =
   `CREATE TABLE IF NOT EXISTS bike_make (
     brand TEXT,
     type TEXT,
     category TEXT
   )`
-// Bike Specs Table
-const createTableBikeSpecsQuery =
-  `CREATE TABLE IF NOT EXISTS bike_specs (
+
+//                                                        ************* Bike Details Table *************
+const createTableBikeDetailsQuery =
+  `CREATE TABLE IF NOT EXISTS bike_details (
     brand_id INTEGER, 
     size TEXT,
     color TEXT,
@@ -34,62 +35,64 @@ const createTableBikeSpecsQuery =
     component TEXT
   )`
 
+//                                                        ************* Order (join table) *************
+
+const createTableOrdersQuery =
+  `CREATE TABLE IF NOT EXISTS orders (
+    users_id INTEGER,
+    bike_details_id INTEGER
+  )`
+
+module.exports = database; 
+
+
+
 
  //                                                ************* FOR THE SAKE OF PRESENTATION *************
 
-const createTableSpecializedQuery = 
-  `CREATE TABLE IF NOT EXISTS specialized (
-    brand TEXT
-  )`
-const createTableTrekQuery = 
-  `CREATE TABLE IF NOT EXISTS trek (
-    brand TEXT
-  )`
-const createTableCannondaleQuery = 
-  `CREATE TABLE IF NOT EXISTS cannondale (
-    brand TEXT
-  )`
-const createSpecializedBikeQuery = 
-  `CREATE TABLE IF NOT EXISTS specialized_bikes (
-    brand_name TEXT,
-    name TEXT,
-    type TEXT,
-    category TEXT
-    size TEXT,
-    color TEXT,
-    material TEXT, 
-    component TEXT
-  )`
-const createTrekBikeQuery = 
-  `CREATE TABLE IF NOT EXISTS trek_bikes (
-    brand_name TEXT,
-    name TEXT,
-    type TEXT,
-    category TEXT
-    size TEXT,
-    color TEXT,
-    material TEXT, 
-    component TEXT
-  )`
-const createCannondaleBikeQuery = 
-  `CREATE TABLE IF NOT EXISTS cannondale_bikes (
-    brand_name TEXT,
-    name TEXT,
-    type TEXT,
-    category TEXT
-    size TEXT,
-    color TEXT,
-    material TEXT, 
-    component TEXT
-  )`
+// const createTableSpecializedQuery = 
+//   `CREATE TABLE IF NOT EXISTS specialized (
+//     brand TEXT
+//   )`
+// const createTableTrekQuery = 
+//   `CREATE TABLE IF NOT EXISTS trek (
+//     brand TEXT
+//   )`
+// const createTableCannondaleQuery = 
+//   `CREATE TABLE IF NOT EXISTS cannondale (
+//     brand TEXT
+//   )`
+// const createSpecializedBikeQuery = 
+//   `CREATE TABLE IF NOT EXISTS specialized_bikes (
+//     brand_name TEXT,
+//     name TEXT,
+//     type TEXT,
+//     category TEXT
+//     size TEXT,
+//     color TEXT,
+//     material TEXT, 
+//     component TEXT
+//   )`
+// const createTrekBikeQuery = 
+//   `CREATE TABLE IF NOT EXISTS trek_bikes (
+//     brand_name TEXT,
+//     name TEXT,
+//     type TEXT,
+//     category TEXT
+//     size TEXT,
+//     color TEXT,
+//     material TEXT, 
+//     component TEXT
+//   )`
+// const createCannondaleBikeQuery = 
+//   `CREATE TABLE IF NOT EXISTS cannondale_bikes (
+//     brand_name TEXT,
+//     name TEXT,
+//     type TEXT,
+//     category TEXT
+//     size TEXT,
+//     color TEXT,
+//     material TEXT, 
+//     component TEXT
+//   )`
 
-//                                                        ************* Order (join table) *************
-
-
-const createTableOrdersQuery = 
-  `CREATE TABLE IF NOT EXISTS orders (
-    users_id INTEGER,
-    bikespec_id INTEGER
-  )`
-
-  module.exports = database; 

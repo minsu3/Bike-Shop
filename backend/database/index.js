@@ -9,10 +9,7 @@ const port = 9000;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
   next();
 });
@@ -71,12 +68,12 @@ app.post("/api/users", (req, res) => {
   db.run(insertNewUser, reqBody, function(error) {
     if (error) {
       console.log(
-        `Failed to create new user with name ${req.body.first_name} ${req.body.last_name}`
+        `Failed to create new user with name ${req.body.first_name} ${req.body.last_name}.`
       );
       res.sendStatus(500);
     } else {
       console.log(
-        `Successfully added new user ${req.body.first_name} ${req.body.last_name}`
+        `Successfully added new user ${req.body.first_name} ${req.body.last_name}.`
       );
       res.sendStatus(200);
     }
@@ -115,13 +112,13 @@ app.put("/api/users/:id", (req, res) => {
     error => {
       if (error) {
         console.log(
-          `Failed to update a user named ${req.body.first_name} ${req.body.last_name}`,
+          `Failed to update a user named ${req.body.first_name} ${req.body.last_name}.`,
           error
         );
         res.sendStatus(500);
       } else {
         console.log(
-          `User named ${req.body.first_name} ${req.body.last_name} was updated successfully`
+          `User named ${req.body.first_name} ${req.body.last_name} was updated successfully.`
         );
         res.sendStatus(200);
       }
@@ -136,9 +133,9 @@ app.delete("/api/users/:id", (req, res) => {
 
   db.run(deleteUser, userId, error => {
     if (error) {
-      console.log(`Failed to delete from user with id of ${userId} failed`);
+      console.log(`Failed to delete from user with id of ${userId} failed.`);
     } else {
-      console.log(`Successfully deted from customer with id of ${userId}`);
+      console.log(`Successfully deted from customer with id of ${userId}.`);
     }
   });
   // db.run(deleteUserOrder, userId, error => {
@@ -151,128 +148,34 @@ app.delete("/api/users/:id", (req, res) => {
   // })
 });
 
-
-
-// EACH BRANDS
-
-
-app.get("/api/specialized", (req, res) => {
-  const getAllSpecialized = "SELECT * FROM specialized";
-
-  db.all(getAllSpecialized, (error, results) => {
-    if (error) {
-      console.log("Get all specialized table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-app.get("/api/trek", (req, res) => {
-  const getAllTrek = "SELECT * FROM trek";
-
-  db.all(getAllTrek, (error, results) => {
-    if (error) {
-      console.log("Get all trek table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-app.get("/api/cannondale", (req, res) => {
-  const getAllCannondale = "SELECT * FROM cannondale";
-
-  db.all(getAllCannondale, (error, results) => {
-    if (error) {
-      console.log("Get all cannondale table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-// INDIVIDUAL BICYCLES
-
-app.get("/api/specializedbikes", (req, res) => {
-  const getAllSpecializedBikes = "SELECT * FROM specialized_bikes";
-
-  db.all(getAllSpecializedBikes, (error, results) => {
-    if (error) {
-      console.log("Get all specialized bikes table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-// Get one
-app.get("/api/specializedbikes/:id", (req, res) => {
-  const specId = req.params.id;
-  const getOneSpecializedBike = `SELECT * FROM specialized_bikes WHERE specialized_bikes.oid = ?`;
-
-  db.get(getOneSpecializedBike, [specId], (error, results) => {
-    if (error) {
-      console.log("Failed to retrieve one specialized bike from table", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-// THIS ONE WORKS
-app.get("/api/specialized_bikes/:id", (req, res) => {
-  const makeId = req.params.id;
-  const getOneMake = `SELECT * FROM specialized_bikes WHERE specialized_bikes.oid = ?`;
-
-  db.all(getOneMake, [makeId], (error, results) => {
-    if (error) {
-      console.log("Failed to retrieve a bike make from table", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-app.get("/api/trekbikes", (req, res) => {
-  const getAllTrekBikes = "SELECT * FROM trek_bikes";
-
-  db.all(getAllTrekBikes, (error, results) => {
-    if (error) {
-      console.log("Get all trek bikes table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
-app.get("/api/cannondalebikes", (req, res) => {
-  const getAllCannondaleBikes = "SELECT * FROM cannondale_bikes";
-
-  db.all(getAllCannondaleBikes, (error, results) => {
-    if (error) {
-      console.log("Get all cannnondle bikes table failed", error);
-      res.sendStatus(500);
-    } else res.status(200).json(results);
-  });
-});
-
 //                                                          ************* BIKE MAKE *************
+
+// GET all bike makes 
 app.get("/api/bike_make", (req, res) => {
   const getAllBikeMakes = "SELECT * FROM bike_make";
 
   db.all(getAllBikeMakes, (error, results) => {
     if (error) {
-      console.log("Get all bike makes table failed", error);
+      console.log("Get all bike makes table failed.", error);
       res.sendStatus(500);
     } else res.status(200).json(results);
   });
 });
 
+// GET one bike make 
 app.get("/api/bike_make/:id", (req, res) => {
   const makeId = req.params.id;
   const getOneMake = `SELECT * FROM bike_make WHERE bike_make.oid = ?`;
 
   db.all(getOneMake, [makeId], (error, results) => {
     if (error) {
-      console.log("Failed to retrieve a bike make from table", error);
+      console.log("Failed to retrieve a bike make from table.", error);
       res.sendStatus(500);
     } else res.status(200).json(results);
   });
 });
 
+// CREATE (add) one bike make 
 app.post("/api/bike_make", (req, res) => {
   console.log("HELLO WORLD")
   const reqBody = [req.body.brand, req.body.type, req.body.category];
@@ -281,18 +184,19 @@ app.post("/api/bike_make", (req, res) => {
   db.run(insertNewMake, reqBody, error => {
     if (error) {
       console.log(
-        `Failed to create bike make: ${req.body.brand}`
+        `Failed to create bike make: ${req.body.brand}.`
       );
       res.sendStatus(500);
     } else {
       console.log(
-        `Successfully created bike make ${req.body.brand} `
+        `Successfully created bike make ${req.body.brand}.`
       );
       res.sendStatus(200);
     }
   });
 });
 
+// UPDATE one bike make
 app.put("/api/bike_make/:id", (req, res) => {
   const makeId = req.params.id;
   const reqBody = [req.body.brand, req.body.type, req.body.category];
@@ -305,60 +209,61 @@ app.put("/api/bike_make/:id", (req, res) => {
 
   db.run(updateMake, reqBody, error => {
     if (error) {
-      console.log(`Failed to update bike make`, error);
+      console.log(`Failed to update bike make.`, error);
       res.sendStatus(500);
     } else {
-      console.log(`Successfully updated bike make`);
+      console.log(`Successfully updated bike make.`);
       res.sendStatus(200);
     }
   }
   );
 });
 
+// DELETE one bike make
 app.delete("/api/bike_make/:id", (req, res) => {
   const makeId = [req.params.id];
   const deleteMake = `DELETE FROM bike_make WHERE ? = bike_make.oid`;
 
   db.run(deleteMake, makeId, error => {
     if (error) {
-      console.log(`Failed to delete from make with id of ${makeId}`);
+      console.log(`Failed to delete from make with id of ${makeId}.`);
       res.sendStatus(500);
     } else {
-      console.log(`Successfully deleted make with id of ${makeId}`);
+      console.log(`Successfully deleted make with id of ${makeId}.`);
       res.sendStatus(200);
     }
   });
 });
 
 
-//                                                          ************* BIKE SPECS *************
+//                                                          ************* BIKE DETAILS *************
 
+// GET all bike details 
+app.get("/api/bikedetails", (req, res) => {
+  const getAllBikeDetails = "SELECT * FROM bike_details";
 
-
-app.get("/api/bikespecs", (req, res) => {
-  const getAllBikeSpecs = "SELECT * FROM bike_specs";
-
-  db.all(getAllBikeSpecs, (error, results) => {
+  db.all(getAllBikeDetails, (error, results) => {
     if (error) {
-      console.log("Get all bike specs table failed", error);
+      console.log("Get all bike details table failed.", error);
       res.sendStatus(500);
     } else res.status(200).json(results);
   });
 });
 
-app.get("/api/bikespecs/:id", (req, res) => {
-  const specId = req.params.id;
-  const getOneSpec = `SELECT * FROM bike_specs WHERE bike_specs.oid = ?`;
+// GET one bike detail
+app.get("/api/bikedetails/:id", (req, res) => {
+  const detailId = req.params.id;
+  const getOneDetail = `SELECT * FROM bike_details WHERE bike_details.oid = ?`;
 
-  db.all(getOneSpec, [specId], (error, results) => {
+  db.all(getOneDetail, [detailId], (error, results) => {
     if (error) {
-      console.log("Failed to retrieve a bike spec from table", error);
+      console.log("Failed to retrieve single bike detail from table.", error);
       res.sendStatus(500);
     } else res.status(200).json(results);
   });
 });
 
-app.post("/api/bikespecs", (req, res) => {
+app.post("/api/bikedetails", (req, res) => {
   const reqBody = [
     req.body.brand_id,
     req.body.size,
@@ -367,33 +272,34 @@ app.post("/api/bikespecs", (req, res) => {
     req.body.serial_number,
     req.body.component,
   ];
-  const insertNewSpec = "INSERT INTO bike_specs VALUES (?, ?, ?, ?, ?, ?)";
+  const insertNewDetail = "INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?)";
 
-  db.run(insertNewSpec, reqBody, error => {
+  db.run(insertNewDetail, reqBody, error => {
     if (error) {
-      console.log(`Failed to create a bike spec.`);
+      console.log(`Failed to create a bike detail.`);
       res.sendStatus(500);
     } else {
-      console.log(`Successfully created a bike spec.`);
+      console.log(`Successfully created a bike detail.`);
       res.sendStatus(200);
     }
   });
 });
 
-app.put("/api/bikespecs/:id", (req, res) => {
-  const specId = req.params.id;
-  const updateSpec = `
-    UPDATE bike_specs SET 
+// UPDATE one bike detail
+app.put("/api/bikedetails/:id", (req, res) => {
+  const detailId = req.params.id;
+  const updateDetail = `
+    UPDATE bike_details SET 
       BRAND_ID = ?,
       SIZE = ?,
       COLOR = ?,
       MATERIAL = ?,
       SERIAL_NUMBER = ?,
       COMPONENT = ?
-    WHERE bike_specs.oid = ${specId}`;
+    WHERE bike_details.oid = ${detailId}`;
 
   db.run(
-    updateSpec,
+    updateDetail,
     [
       req.body.brand_id,
       req.body.size,
@@ -404,32 +310,33 @@ app.put("/api/bikespecs/:id", (req, res) => {
     ],
     error => {
       if (error) {
-        console.log(`Failed to update bike spec`, error);
+        console.log(`Failed to update bike detail.`, error);
         res.sendStatus(500);
       } else {
-        console.log(`Successfully updated bike spec`);
+        console.log(`Successfully updated bike detail.`);
         res.sendStatus(200);
       }
     }
   );
 });
 
-app.delete("/api/bikespecs/:id", (req, res) => {
-  const specId = [req.params.id];
-  const deleteSpec = `DELETE FROM bike_specs WHERE ? = bike_specs.oid`;
+// DELETE one bike detail
+app.delete("/api/bikedetails/:id", (req, res) => {
+  const detailId = [req.params.id];
+  const deleteDetail = `DELETE FROM bike_details WHERE ? = bike_details.oid`;
 
-  db.run(deleteSpec, specId, error => {
+  db.run(deleteDetail, detailId, error => {
     if (error) {
-      console.log(`Failed to delete a spec with id of ${specId}`);
+      console.log(`Failed to delete a bike detail with id of ${detailId}.`);
       res.sendStatus(500);
     } else {
-      console.log(`Successfully deleted a spec with id of ${specId}`);
+      console.log(`Successfully deleted a bike detail with id of ${detailId}.`);
       res.sendStatus(200);
     }
   });
 });
 
-// ORDERS JOIN TABLE
+//                                                     ************* ORDER (join table) *************
 
 app.get("/api/orders", (req, res) => {
   const queryString = `SELECT * FROM orders`;
@@ -444,7 +351,7 @@ app.get("/api/orders", (req, res) => {
   });
 });
 
-app.get("/api/users/:id/bikespecs", (req, res) => {
+app.get("/api/users/:id/bikedetails", (req, res) => {
   const queryString = `SELECT * FROM orders`;
 
   db.all(queryString, (error, results) => {
@@ -457,22 +364,22 @@ app.get("/api/users/:id/bikespecs", (req, res) => {
   });
 });
 
-app.post("/api/users/:id/bikespecs/:specId", (req, res) => {
+app.post("/api/users/:id/bikedetails/:specId", (req, res) => {
   const reqParams = [req.params.id, req.params.specId];
   const insertString = "INSERT INTO orders VALUES (?, ?)";
 
   db.run(insertString, reqParams, error => {
     if (error) {
-      console.log(`Failed to create user order`, error);
+      console.log(`Failed to create user order.`, error);
       res.sendStatus(500);
     } else {
-      console.log(`Successfully created user order`);
+      console.log(`Successfully created user order.`);
       res.sendStatus(200);
     }
   });
 });
 
-app.put("/api/users/:id/bikespecs/:specId", (req, res) => {
+app.put("/api/users/:id/bikedetails/:specId", (req, res) => {
   const reqParams = [req.params.id, req.params, req.params.id, req.params.id];
   let updateOrders = `
     UPDATE orders SET 
@@ -482,15 +389,113 @@ app.put("/api/users/:id/bikespecs/:specId", (req, res) => {
 
   db.run(updateOrders, reqParams, error => {
     if (error) {
-      console.log(`Failed to update order`, error);
+      console.log(`Failed to update order.`, error);
       res.sendStatus(500);
     } else {
-      console.log(`Successfully updated order`);
+      console.log(`Successfully updated order.`);
       res.sendStatus(200);
     }
   });
 });
 
+
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
+
+
+
+// EACH BRANDS
+
+// app.get("/api/specialized", (req, res) => {
+//   const getAllSpecialized = "SELECT * FROM specialized";
+
+//   db.all(getAllSpecialized, (error, results) => {
+//     if (error) {
+//       console.log("Get all specialized table failed", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+// app.get("/api/trek", (req, res) => {
+//   const getAllTrek = "SELECT * FROM trek";
+
+//   db.all(getAllTrek, (error, results) => {
+//     if (error) {
+//       console.log("Get all trek table failed", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+
+// app.get("/api/cannondale", (req, res) => {
+//   const getAllCannondale = "SELECT * FROM cannondale";
+
+//   db.all(getAllCannondale, (error, results) => {
+//     if (error) {
+//       console.log("Get all cannondale table failed", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+
+// // INDIVIDUAL BICYCLES
+
+// app.get("/api/specializedbikes", (req, res) => {
+//   const getAllSpecializedBikes = "SELECT * FROM specialized_bikes";
+
+//   db.all(getAllSpecializedBikes, (error, results) => {
+//     if (error) {
+//       console.log("Get all specialized bikes table failed", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+
+// // Get one
+// app.get("/api/specializedbikes/:id", (req, res) => {
+//   const specId = req.params.id;
+//   const getOneSpecializedBike = `SELECT * FROM specialized_bikes WHERE specialized_bikes.oid = ?`;
+
+//   db.get(getOneSpecializedBike, [specId], (error, results) => {
+//     if (error) {
+//       console.log("Failed to retrieve one specialized bike from table", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+
+// // THIS ONE WORKS
+// app.get("/api/specialized_bikes/:id", (req, res) => {
+//   const makeId = req.params.id;
+//   const getOneMake = `SELECT * FROM specialized_bikes WHERE specialized_bikes.oid = ?`;
+
+//   db.all(getOneMake, [makeId], (error, results) => {
+//     if (error) {
+//       console.log("Failed to retrieve a bike make from table", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+
+// app.get("/api/trekbikes", (req, res) => {
+//   const getAllTrekBikes = "SELECT * FROM trek_bikes";
+
+//   db.all(getAllTrekBikes, (error, results) => {
+//     if (error) {
+//       console.log("Get all trek bikes table failed", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+
+// app.get("/api/cannondalebikes", (req, res) => {
+//   const getAllCannondaleBikes = "SELECT * FROM cannondale_bikes";
+
+//   db.all(getAllCannondaleBikes, (error, results) => {
+//     if (error) {
+//       console.log("Get all cannnondle bikes table failed", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
