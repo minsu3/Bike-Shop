@@ -364,7 +364,7 @@ app.get("/api/users/:id/bikedetails", (req, res) => {
   });
 });
 
-app.post("/api/users/:id/bikedetails/:specId", (req, res) => {
+app.post("/api/users/:id/bikedetails/:detailId", (req, res) => {
   const reqParams = [req.params.id, req.params.specId];
   const insertString = "INSERT INTO orders VALUES (?, ?)";
 
@@ -379,7 +379,7 @@ app.post("/api/users/:id/bikedetails/:specId", (req, res) => {
   });
 });
 
-app.put("/api/users/:id/bikedetails/:specId", (req, res) => {
+app.put("/api/users/:id/bikedetails/:detailId", (req, res) => {
   const reqParams = [req.params.id, req.params, req.params.id, req.params.id];
   let updateOrders = `
     UPDATE orders SET 

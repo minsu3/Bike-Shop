@@ -5,11 +5,11 @@ const users = [
     first_name: "Minsu",
     last_name: "Kim",
     email: "kim97minsu@gmail.com",
-    street_number: "999",
-    street_name: "Pawnee Dr.",
-    city: "Pawnee",
+    street_number: "6917",
+    street_name: "Corte Pacifica",
+    city: "Pleasanton",
     state: "Illinois",
-    zip_code: "12345",
+    zip_code: "94566",
     phone_number: "9255963678",
     registration_date: "2019-01-01"
   },
@@ -17,11 +17,11 @@ const users = [
     first_name: "Dann",
     last_name: "Manganti",
     email: "dann@gmail.com",
-    street_number: "111",
-    street_name: "Dann Dr.",
-    city: "Dann",
-    state: "SF",
-    zip_code: "12346",
+    street_number: "225",
+    street_name: "Bush St.",
+    city: "San Francisco",
+    state: "California",
+    zip_code: "94016",
     phone_number: "0123456789",
     registration_date: "2019-02-02"
   }
@@ -29,14 +29,19 @@ const users = [
 
 const bikes_make_list = [
   {
-    brand: "Brand",
-    type: "Type",
-    category: "Category"
+    brand: "Specialized",
+    type: "Road",
+    category: "Aero"
   },
   {
-    brand: "Second Brand",
-    type: "Second Type",
-    category: "Second Category"
+    brand: "Trek",
+    type: "Mountain",
+    category: "Enduro"
+  },
+  {
+    brand: "Cannondale",
+    type: "Road",
+    category: "Lightweight"
   }
 ]
 
@@ -44,18 +49,34 @@ const bike_details_list = [
   {
     brand_id: "1",
     size: "Medium",
-    color: "Blue",
-    material: "Aluminum",
+    color: "Black",
+    material: "Carbon Fiber",
     serial_number: "12345",
     component: "Shimano"
+  },
+  {
+    brand_id: "1",
+    size: "Large",
+    color: "Red",
+    material: "Aluminum",
+    serial_number: "12346",
+    component: "Campagnolo"
   },
   {
     brand_id: "2",
     size: "Large",
     color: "Red",
-    material: "Aluminum",
-    serial_number: "12345",
+    material: "Carbon Fiber",
+    serial_number: "12347",
     component: "Campagnolo"
+  },
+  {
+    brand_id: "3",
+    size: "Large",
+    color: "Gray",
+    material: "Carbon Fiber",
+    serial_number: "12348",
+    component: "Shimano"
   }
 ]
 

@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import SpecializedContainer from './SpecializedContainer';
-import TrekContainer from './TrekContainer';
-import CannondaleContainer from './CannondaleContainer';
-
+import BikeMakesContainer from './BikeMakesContainer';
 
 class BikeContainer extends Component {
   render() {
@@ -10,9 +7,7 @@ class BikeContainer extends Component {
       <div>
       <h2 className="bike-brands">Brands</h2>
         <div className="bike-container">
-        <SpecializedContainer />
-        <TrekContainer />
-        <CannondaleContainer />
+        <BikeMakesContainer />
         </div>
       </div>
     )

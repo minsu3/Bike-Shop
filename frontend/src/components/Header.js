@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import shoppingcart from "../images/shoppingcart.png";
 import retailmarker from "../images/retailmarker.png";
 
+// fixed navbar on top of the page on every page
 const navStyle = {
   position: "fixed",
   top: 0,
@@ -11,6 +12,7 @@ const navStyle = {
   zIndex: 1
 };
 
+// Header component will contain all the components in the static navbar
 class Header extends Component {
   render() { 
     return (
@@ -29,7 +31,7 @@ class Header extends Component {
             </Nav.Link>
           </Nav>
         </Navbar>
-
+{/* Second navbar containing home page, bike, and about us components */}
         <Navbar bg="light" variant="light" className="nextbar">
           <Navbar.Brand href={"/home"} id="brand">
             REACT BICYCLE SHOP

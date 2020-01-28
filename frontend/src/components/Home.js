@@ -9,14 +9,17 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* <img src={sworks} alt="banner" className="sworks" /> */}
+
+        {/* Video as landing page */}
         <video className="videoTag" autoPlay loop muted>
           <source src={riding} type="video/mp4" />
         </video>
+
         <h1 id="ridebikes">Ride bikes</h1>
         <h1 id="havefun">Have fun</h1>
         <h1 id="feelgood">Feel good</h1>
 
+        {/* React logo */}
         <img src={reactbike} alt="reactbike" id="reactbike" />
 
         <ButtonToolbar>

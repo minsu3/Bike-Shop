@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import fetchSpecializedBikes from "../model/fetchSpecializedBikes";
-import SpecializedBikes from "../components/SpecializedBikes";
+import fetchSpecializedBikes from "../model/fetchAllBikeSpecs";
+import BikeSpecs from "../components/BikeSpecs";
 import shopvenge from "../images/shopvenge.png";
 import shopshiv from "../images/shopshiv.png";
 import shopstumpjumper from "../images/shopstumpjumper.png";
+import fetchAllBikeSpecs from "../model/fetchAllBikeSpecs";
 
-class SpecializedBikesContainer extends Component {
+class BikeSpecsContainer extends Component {
   state = {
     bikespecs: []
   };
@@ -15,7 +16,7 @@ class SpecializedBikesContainer extends Component {
   }
 
   fetchData = () => {
-    fetchSpecializedBikes.all().then(data => {
+    fetchAllBikeSpecs.all().then(data => {
       this.setState({ bikespecs: data });
     });
   };
@@ -24,37 +25,31 @@ class SpecializedBikesContainer extends Component {
     let indexLists;
     if (this.state.bikespecs) {
       indexLists = this.state.bikespecs.map((bikespec, index) => {
-        if(bikespec.name === 'Venge'){
+        if(bikespec.brand_id === '1'){
           return (
-            <SpecializedBikes
+            <BikeSpecs
               img={shopvenge}
               alt="venge"
               className="venge"
               bikespec={bikespec}
-              key={index}
-              fetchData={this.fetchData}
             />
           );
-        } else if(bikespec.name === 'Shiv') {
+        } else if (bikespec.brand_id === '2') {
           return (
-            <SpecializedBikes
+            <BikeSpecs
               img={shopshiv}
               alt="shiv"
               className="shiv"
               bikespec={bikespec}
-              key={index}
-              fetchData={this.fetchData}
             />
           );
-        } else if(bikespec.name === 'Stumpjumper') {
+        } else if (bikespec.brand_id === '3') {
           return (
-            <SpecializedBikes
+            <BikeSpecs
               img={shopstumpjumper}
               alt="stumpjumper"
               className="stumpjumper"
               bikespec={bikespec}
-              key={index}
-              fetchData={this.fetchData}
             />
           );
         }
@@ -68,4 +63,4 @@ class SpecializedBikesContainer extends Component {
   }
 }
 
-export default SpecializedBikesContainer;
+export default BikeSpecsContainer;

@@ -1,6 +1,6 @@
-const endpoint = "http://localhost:9000/api/trek";
+const endpoint = "http://localhost:9000/api/bike_make";
 
-class fetchTrek {
+class fetchAllBikeMakes {
   static all = () => {
     return fetch(endpoint)
       .then(response => response.json())
@@ -8,4 +8,4 @@ class fetchTrek {
   };
 }
 
-export default fetchTrek;
+export default fetchAllBikeMakes;

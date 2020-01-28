@@ -243,8 +243,8 @@ footer {
 }
 .brands {
     position: relative;
-    height: -10px;
-    left: -600px;
+    text-align: center;
+    width: 30%;
 }
 
 .videoTag {
