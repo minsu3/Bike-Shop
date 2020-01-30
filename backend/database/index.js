@@ -265,7 +265,7 @@ app.get("/api/bikedetails/:id", (req, res) => {
 
 app.post("/api/bikedetails", (req, res) => {
   const reqBody = [
-    req.body.brand_id,
+    req.body.brand,
     req.body.size,
     req.body.color,
     req.body.material,
@@ -290,7 +290,7 @@ app.put("/api/bikedetails/:id", (req, res) => {
   const detailId = req.params.id;
   const updateDetail = `
     UPDATE bike_details SET 
-      BRAND_ID = ?,
+      BRAND = ?,
       SIZE = ?,
       COLOR = ?,
       MATERIAL = ?,
@@ -301,7 +301,7 @@ app.put("/api/bikedetails/:id", (req, res) => {
   db.run(
     updateDetail,
     [
-      req.body.brand_id,
+      req.body.brand,
       req.body.size,
       req.body.color,
       req.body.material,

@@ -29,25 +29,25 @@ const users = [
 
 const bikes_make_list = [
   {
-    brand: "Specialized",
-    type: "Road",
-    category: "Aero"
+    brand: "specialized",
+    type: "road",
+    category: "aero"
   },
   {
-    brand: "Trek",
-    type: "Mountain",
-    category: "Enduro"
+    brand: "trek",
+    type: "mountain",
+    category: "enduro"
   },
   {
-    brand: "Cannondale",
-    type: "Road",
-    category: "Lightweight"
+    brand: "cannondale",
+    type: "road",
+    category: "lightweight"
   }
 ]
 
 const bike_details_list = [
   {
-    brand_id: "1",
+    brand: "specialized",
     size: "Medium",
     color: "Black",
     material: "Carbon Fiber",
@@ -55,7 +55,7 @@ const bike_details_list = [
     component: "Shimano"
   },
   {
-    brand_id: "1",
+    brand: "specialized",
     size: "Large",
     color: "Red",
     material: "Aluminum",
@@ -63,7 +63,7 @@ const bike_details_list = [
     component: "Campagnolo"
   },
   {
-    brand_id: "2",
+    brand: "trek",
     size: "Large",
     color: "Red",
     material: "Carbon Fiber",
@@ -71,7 +71,7 @@ const bike_details_list = [
     component: "Campagnolo"
   },
   {
-    brand_id: "3",
+    brand: "cannondale",
     size: "Large",
     color: "Gray",
     material: "Carbon Fiber",
@@ -144,7 +144,7 @@ db.serialize(() => {
   })
 
   const createBikeDetailsTableQuery =
-    'CREATE TABLE bike_details (brand_id INTEGER, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
+    'CREATE TABLE bike_details (brand INTEGER, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
   db.run(createBikeDetailsTableQuery, error => {
     if (error) console.error("Error creating 'bike_details' table");
     else console.log("Created 'bike_details' table");
@@ -152,9 +152,9 @@ db.serialize(() => {
 
   const insertBikeDetailsQuery = 'INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?)';
   for (let bikedetail of bike_details_list) {
-    let bikeDetailData = [bikedetail.brand_id, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component];
+    let bikeDetailData = [bikedetail.brand, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component];
     db.run(insertBikeDetailsQuery, bikeDetailData, error => {
-      if (error) console.log("Could not insert into bike_details table", [bikedetail.brand_id, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component], error);
+      if (error) console.log("Could not insert into bike_details table", [bikedetail.brand, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component], error);
       else console.log(`Inserted bike into bike_details table`);
     })
   }

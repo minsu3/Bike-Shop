@@ -9,21 +9,20 @@ class BikeSpecs extends Component {
     return (
       <div className="specs">
         <Nav.Link href={"/shoppingcart"}>
-          <img src={ this.props.img } />
-          <p> {this.props.brand_id} </p>
+          <img src={this.props.img } alt=""/>
+          <p> {this.props.bikespec.brand_id} </p>     
         </Nav.Link>
         <p>______________________________</p>
-        {/* <p> {this.props.brand} </p> */}
-        <p> {this.props.size} </p>
-        <p> {this.props.color} </p>
-        <p> {this.props.material} </p>
-        <p> {this.props.serial_number} </p>
-        <p> {this.props.component} </p>
+        <p> {this.props.bikespec.size} </p>
+        <p> {this.props.bikespec.color} </p>
+        <p> {this.props.bikespec.material} </p>
+        <p> {this.props.bikespec.serial_number} </p>
+        <p> {this.props.bikespec.component} </p>
 
         <ButtonToolbar className="buynow">
           <Button variant="dark">Buy Now</Button>
         </ButtonToolbar>
-      </div>
+      </div>  
     );
   }
 }

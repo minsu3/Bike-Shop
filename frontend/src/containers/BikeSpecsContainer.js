@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import fetchSpecializedBikes from "../model/fetchAllBikeSpecs";
 import BikeSpecs from "../components/BikeSpecs";
 import shopvenge from "../images/shopvenge.png";
 import shopshiv from "../images/shopshiv.png";
 import shopstumpjumper from "../images/shopstumpjumper.png";
 import fetchAllBikeSpecs from "../model/fetchAllBikeSpecs";
+import BikeMakesContainer from "./BikeMakesContainer";
 
 class BikeSpecsContainer extends Component {
   state = {
@@ -17,6 +17,7 @@ class BikeSpecsContainer extends Component {
 
   fetchData = () => {
     fetchAllBikeSpecs.all().then(data => {
+      console.log("Setting the state to", data)
       this.setState({ bikespecs: data });
     });
   };
@@ -25,7 +26,8 @@ class BikeSpecsContainer extends Component {
     let indexLists;
     if (this.state.bikespecs) {
       indexLists = this.state.bikespecs.map((bikespec, index) => {
-        if(bikespec.brand_id === '1'){
+        console.log('brand',bikespec.brand)
+        if(bikespec.brand === "specialized") {
           return (
             <BikeSpecs
               img={shopvenge}
@@ -34,7 +36,7 @@ class BikeSpecsContainer extends Component {
               bikespec={bikespec}
             />
           );
-        } else if (bikespec.brand_id === '2') {
+        } else if (bikespec.brand === "trek") {
           return (
             <BikeSpecs
               img={shopshiv}
@@ -43,7 +45,7 @@ class BikeSpecsContainer extends Component {
               bikespec={bikespec}
             />
           );
-        } else if (bikespec.brand_id === '3') {
+        } else if (bikespec.brand === "cannondale") {
           return (
             <BikeSpecs
               img={shopstumpjumper}
@@ -55,6 +57,7 @@ class BikeSpecsContainer extends Component {
         }
       });
     }
+    console.log('index lists', indexLists);
     return (
       <div>
         {indexLists}

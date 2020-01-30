@@ -4,9 +4,8 @@ class fetchAllBikeSpecs {
   static all = () => {
     return fetch(endpoint)
       .then(response => response.json())
-      .catch(err => console.log("Could not get all specialized bikes\n", err));
+      .catch(err => console.log("Could not get all all bike details\n", err));
   };
-
 }
 
 export default fetchAllBikeSpecs;

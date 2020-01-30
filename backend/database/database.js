@@ -27,6 +27,7 @@ const createTableBikeMakeQuery =
 //                                                        ************* Bike Details Table *************
 const createTableBikeDetailsQuery =
   `CREATE TABLE IF NOT EXISTS bike_details (
+    FOREIGN KEY (brand) REFERENCES bike_make(brand),
     brand_id INTEGER, 
     size TEXT,
     color TEXT,

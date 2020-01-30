@@ -20,7 +20,7 @@ class Home extends Component {
         <h1 id="feelgood">Feel good</h1>
 
         {/* React logo */}
-        <img src={reactbike} alt="reactbike" id="reactbike" />
+        {/* <img src={reactbike} alt="reactbike" id="reactbike" /> */}
 
         <ButtonToolbar>
           <Button href={"/bikes"} variant="secondary" id="shopnow">

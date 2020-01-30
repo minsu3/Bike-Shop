@@ -3,8 +3,10 @@ import fetchAllBikeMakes from "../model/fetchAllBikeMakes";
 import BikeMake from "../components/BikeMake";
 import BikeSpecs from "../components/BikeSpecs";
 import specialized from "../images/specialized.png";
+// const image = require('../images/'+bikemake.brand);
 import trek from "../images/trek.png";
 import cannondale from "../images/cannondale.jpeg";
+//import shoppingCart from '../components/shoppingCart';
 
 class BikeMakesContainer extends Component {
   state = {
@@ -25,7 +27,7 @@ class BikeMakesContainer extends Component {
     let indexList;
     if (this.state.bikemakes) {
       indexList = this.state.bikemakes.map((bikemake, index) => {
-        if(bikemake.brand === "Specialized"){
+        if(bikemake.brand === "specialized") {
           return(
             <BikeMake 
               img={specialized}
@@ -34,7 +36,7 @@ class BikeMakesContainer extends Component {
               onClick= {BikeSpecs}
             />
           )
-        } if(bikemake.brand === "Trek"){
+        } if(bikemake.brand === "trek"){
           return(
             <BikeMake 
               img={trek}
@@ -43,7 +45,7 @@ class BikeMakesContainer extends Component {
               onClick={BikeSpecs}
             />
           )
-        } if(bikemake.brand === "Cannondale"){
+        } if(bikemake.brand === "cannondale"){
           return(
             <BikeMake 
               img={cannondale}
