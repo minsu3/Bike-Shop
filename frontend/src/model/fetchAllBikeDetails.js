@@ -1,6 +1,6 @@
 const endpoint = "http://localhost:9000/api/bikedetails";
 
-class fetchAllBikeSpecs {
+class fetchAllBikeDetails {
   static all = () => {
     return fetch(endpoint)
       .then(response => response.json())
@@ -8,4 +8,4 @@ class fetchAllBikeSpecs {
   };
 }
 
-export default fetchAllBikeSpecs;
+export default fetchAllBikeDetails;

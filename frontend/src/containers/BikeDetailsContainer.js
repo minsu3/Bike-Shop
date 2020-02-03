@@ -3,10 +3,10 @@ import BikeSpecs from "../components/BikeSpecs";
 import shopvenge from "../images/shopvenge.png";
 import shopshiv from "../images/shopshiv.png";
 import shopstumpjumper from "../images/shopstumpjumper.png";
-import fetchAllBikeSpecs from "../model/fetchAllBikeSpecs";
+import fetchAllBikeDetails from "../model/fetchAllBikeDetails";
 import BikeMakesContainer from "./BikeMakesContainer";
 
-class BikeSpecsContainer extends Component {
+class BikeDetailsContainer extends Component {
   state = {
     bikespecs: []
   };
@@ -16,7 +16,7 @@ class BikeSpecsContainer extends Component {
   }
 
   fetchData = () => {
-    fetchAllBikeSpecs.all().then(data => {
+    fetchAllBikeDetails.all().then(data => {
       console.log("Setting the state to", data)
       this.setState({ bikespecs: data });
     });
@@ -66,4 +66,4 @@ class BikeSpecsContainer extends Component {
   }
 }
 
-export default BikeSpecsContainer;
+export default BikeDetailsContainer;

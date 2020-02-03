@@ -7,7 +7,7 @@ import signIn from '../components/signIn';
 import BikeMakesContainer from "../containers/BikeMakesContainer";
 import aboutPage from '../components/aboutPage';
 import shoppingCart from '../components/shoppingCart';
-import BikeSpecsContainer from '../containers/BikeSpecsContainer';
+import BikeDetailsContainer from '../containers/BikeDetailsContainer';
 
 export default (
   <div>
@@ -18,9 +18,9 @@ export default (
       <Route path="/findretailer" component={findRetailer} />
       <Route path="/userauth" component={signIn} />
       <Route exact path="/bikes" component= {BikeMakesContainer} />
-      <Route path="/bikes/specialized" component={BikeSpecsContainer} />
-      <Route path="/bikes/trek" component={BikeSpecsContainer} />
-      <Route path="/bikes/cannondale" component={BikeSpecsContainer} />
+      <Route path="/bikes/specialized" component={BikeDetailsContainer} />
+      <Route path="/bikes/trek" component={BikeDetailsContainer} />
+      <Route path="/bikes/cannondale" component={BikeDetailsContainer} />
       <Route path="/aboutus" component={aboutPage} />
       <Route exact path="/shoppingcart" component={shoppingCart} />
     </Switch>
