@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import fetchAllBikeMakes from "../model/fetchAllBikeMakes";
 import BikeMake from "../components/BikeMake";
-import BikeSpecs from "../components/BikeSpecs";
+import SpecializedBikes from "../components/SpecializedBikes";
+import TrekBikes from "../components/TrekBikes";
+import CannondaleBikes from "../components/CannondaleBikes";
 import specialized from "../images/specialized.png";
 // const image = require('../images/'+bikemake.brand);
 import trek from "../images/trek.png";
@@ -33,7 +35,7 @@ class BikeMakesContainer extends Component {
               img={specialized}
               alt="specialized"
               bikemake={bikemake}
-              onClick= {BikeSpecs}
+              onClick= {SpecializedBikes}
             />
           )
         } if(bikemake.brand === "trek"){
@@ -42,7 +44,7 @@ class BikeMakesContainer extends Component {
               img={trek}
               alt="trek"
               bikemake={bikemake}
-              onClick={BikeSpecs}
+              onClick={TrekBikes}
             />
           )
         } if(bikemake.brand === "cannondale"){
@@ -51,7 +53,7 @@ class BikeMakesContainer extends Component {
               img={cannondale}
               alt="cannondale"
               bikemake={bikemake}
-              onClick={BikeSpecs}
+              onClick={CannondaleBikes}
             />
           )
         }

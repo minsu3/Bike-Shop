@@ -48,36 +48,85 @@ const bikes_make_list = [
 const bike_details_list = [
   {
     brand: "specialized",
+    bike_name: "Venge",
     size: "Medium",
     color: "Black",
     material: "Carbon Fiber",
-    serial_number: "12345",
+    serial_number: "10000",
     component: "Shimano"
   },
   {
     brand: "specialized",
+    bike_name: "Shiv",
     size: "Large",
+    color: "Blue",
+    material: "Carbon Fiber",
+    serial_number: "10001",
+    component: "Shimano"
+  },
+  {
+    brand: "specialized",
+    bike_name: "Stumpjumper",
+    size: "Small",
     color: "Black",
-    material: "Aluminum",
-    serial_number: "12346",
+    material: "Carbon Fiber",
+    serial_number: "10002",
     component: "Campagnolo"
   },
   {
     brand: "trek",
+    bike_name: "Domane",
     size: "Large",
-    color: "Blue",
+    color: "Red",
     material: "Carbon Fiber",
-    serial_number: "12347",
+    serial_number: "10003",
+    component: "Sram Red"
+  },
+  {
+    brand: "trek",
+    bike_name: "Boone",
+    size: "Small",
+    color: "Dark Red",
+    material: "Carbon Fiber",
+    serial_number: "10004",
+    component: "Campagnolo"
+  },
+  {
+    brand: "trek",
+    bike_name: "Super Caliber",
+    size: "Large",
+    color: "Black",
+    material: "Carbon Fiber",
+    serial_number: "10005",
     component: "Campagnolo"
   },
   {
     brand: "cannondale",
-    size: "Large",
-    color: "Gray",
-    material: "Carbon Fiber",
-    serial_number: "12348",
+    bike_name: "Caad 12",
+    size: "Medium",
+    color: "Light Blue",
+    material: "Aluminum",
+    serial_number: "10006",
     component: "Shimano"
-  }
+  },
+  {
+    brand: "cannondale",
+    bike_name: "Super Six Evo",
+    size: "Large",
+    color: "Black and Orange",
+    material: "Carbon Fiber",
+    serial_number: "10007",
+    component: "Shimano"
+  },
+  {
+    brand: "cannondale",
+    bike_name: "Bad Habit",
+    size: "Small",
+    color: "Black",
+    material: "Carbon Fiber",
+    serial_number: "10008",
+    component: "Campagnolo"
+  },
 ]
 
 // join tables will be created in seed file
@@ -144,17 +193,17 @@ db.serialize(() => {
   })
 
   const createBikeDetailsTableQuery =
-    'CREATE TABLE bike_details (brand INTEGER, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
+    'CREATE TABLE bike_details (brand INTEGER, bike_name TEXT, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
   db.run(createBikeDetailsTableQuery, error => {
     if (error) console.error("Error creating 'bike_details' table");
     else console.log("Created 'bike_details' table");
   })
 
-  const insertBikeDetailsQuery = 'INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?)';
+  const insertBikeDetailsQuery = 'INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?, ?)';
   for (let bikedetail of bike_details_list) {
-    let bikeDetailData = [bikedetail.brand, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component];
+    let bikeDetailData = [bikedetail.brand, bikedetail.bike_name, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component];
     db.run(insertBikeDetailsQuery, bikeDetailData, error => {
-      if (error) console.log("Could not insert into bike_details table", [bikedetail.brand, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component], error);
+      if (error) console.log("Could not insert into bike_details table", [bikedetail.brand, bikedetail.bike_name, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component], error);
       else console.log(`Inserted bike into bike_details table`);
     })
   }

@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("");
+  res.send("go to http://localhost:9000/api/users to check users data.");
 });
 
 // Get all users
@@ -266,13 +266,14 @@ app.get("/api/bikedetails/:id", (req, res) => {
 app.post("/api/bikedetails", (req, res) => {
   const reqBody = [
     req.body.brand,
+    req.body.bike_name,
     req.body.size,
     req.body.color,
     req.body.material,
     req.body.serial_number,
     req.body.component,
   ];
-  const insertNewDetail = "INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?)";
+  const insertNewDetail = "INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?, ?)";
 
   db.run(insertNewDetail, reqBody, error => {
     if (error) {
@@ -291,6 +292,7 @@ app.put("/api/bikedetails/:id", (req, res) => {
   const updateDetail = `
     UPDATE bike_details SET 
       BRAND = ?,
+      BIKE_NAME = ?,
       SIZE = ?,
       COLOR = ?,
       MATERIAL = ?,
@@ -302,6 +304,7 @@ app.put("/api/bikedetails/:id", (req, res) => {
     updateDetail,
     [
       req.body.brand,
+      req.body.bike_name,
       req.body.size,
       req.body.color,
       req.body.material,

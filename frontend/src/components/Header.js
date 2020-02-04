@@ -38,7 +38,7 @@ class Header extends Component {
           </Navbar.Brand>
           <Nav id="second">
             <Nav.Link href={"/bikes"} className="next">
-              Bikes
+              Shop by Brand
             </Nav.Link>
             <Nav.Link href={"/aboutus"} className="aboutus">
               About Us

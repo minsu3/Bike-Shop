@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from "react-bootstrap/Nav";
-import BikeSpecs from './BikeSpecs';
+// import BikeDetails from './BikeDetails';
 
 
 class BikeMake extends Component {

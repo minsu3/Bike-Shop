@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import "bootstrap/dist/css/bootstrap.min.css";
 import route from './config/route'
 
@@ -9,7 +8,6 @@ class App extends Component {
 		return (
       <div>
 				<Header />
-				<Footer /> 
 				{ route }
       </div>
     );

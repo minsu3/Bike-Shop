@@ -8,6 +8,7 @@ import BikeMakesContainer from "../containers/BikeMakesContainer";
 import aboutPage from '../components/aboutPage';
 import shoppingCart from '../components/shoppingCart';
 import BikeDetailsContainer from '../containers/BikeDetailsContainer';
+import getOneBike from '../components/getOneBike';
 
 export default (
   <div>
@@ -21,6 +22,7 @@ export default (
       <Route path="/bikes/specialized" component={BikeDetailsContainer} />
       <Route path="/bikes/trek" component={BikeDetailsContainer} />
       <Route path="/bikes/cannondale" component={BikeDetailsContainer} />
+      <Route path="/viewbike" component={getOneBike} />
       <Route path="/aboutus" component={aboutPage} />
       <Route exact path="/shoppingcart" component={shoppingCart} />
     </Switch>
