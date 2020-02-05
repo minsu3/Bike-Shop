@@ -22,7 +22,9 @@ export default (
       <Route path="/bikes/specialized" component={BikeDetailsContainer} />
       <Route path="/bikes/trek" component={BikeDetailsContainer} />
       <Route path="/bikes/cannondale" component={BikeDetailsContainer} />
-      <Route path="/viewbike" component={getOneBike} />
+      <Route path="/viewbike/:id" render={(props) => {
+        return <getOneBike oid = {props.match.params.id} />
+      }} />
       <Route path="/aboutus" component={aboutPage} />
       <Route exact path="/shoppingcart" component={shoppingCart} />
     </Switch>

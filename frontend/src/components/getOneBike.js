@@ -5,6 +5,7 @@ class getOneBike extends Component {
     return (
       <div>
         <h2>SHOW SINGLE BIKE AND DESCRIPTION HERE</h2>
+        
       </div>
     );
   }
