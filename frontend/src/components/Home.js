@@ -10,7 +10,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* Video as landing page */}
         <video className="videoTag" autoPlay loop muted>
           <source src={riding} type="video/mp4"/>
         </video>
@@ -22,7 +21,7 @@ class Home extends Component {
       </div>
 
         <ButtonToolbar>
-          <Button href={"/bikes"} variant="secondary" id="shopnow">
+          <Button href={"/bikes"} variant="dark" id="shopnow">
             SHOP NOW
           </Button>
         </ButtonToolbar>

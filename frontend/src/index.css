@@ -20,20 +20,25 @@ code {
     color: white;
 }
 .title {
-    color: white;
-    position: absolute;
-    top: 400px;
-    left: 320px;
-    transform: translate(-50%, -50%);
-    font-family: 'Anton';
+  font-size: 160%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 #shopnow {
-    position: absolute;
-    top: 550px;
-    left: 310px;
-    transform: translate(-50%, -50%);
-    width: 8%;
-    height: 1.5;
+  font-size: 120%;
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 65%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 h2 {
     font-family: 'Big Shoulders Text';
@@ -185,7 +190,6 @@ auth {
     top: 20px;
     left: 550px;
 }
-
 /* This footer will stay on the bottom of the page always  */
 footer {
     text-align: center;
@@ -225,7 +229,8 @@ footer {
 }
 .videoTag {
     width: 100%;
-    height: 100%;
+    height: 765px;
+    object-fit: cover;
 
 }
 .hover {
