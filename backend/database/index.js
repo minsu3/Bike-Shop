@@ -163,9 +163,9 @@ app.get("/api/bike_make", (req, res) => {
 });
 
 // GET one bike make 
-app.get("/api/bike_make/:id", (req, res) => {
-  const makeId = req.params.id;
-  const getOneMake = `SELECT * FROM bike_make WHERE bike_make.oid = ?`;
+app.get("/api/bike_make/:brand", (req, res) => {
+  const makeId = req.params.brand;
+  const getOneMake = `SELECT * FROM bike_make WHERE bike_make.brand = ?`;
 
   db.all(getOneMake, [makeId], (error, results) => {
     if (error) {
@@ -251,9 +251,20 @@ app.get("/api/bikedetails", (req, res) => {
 });
 
 // GET one bike detail
-app.get("/api/bikedetails/:id", (req, res) => {
-  const detailId = req.params.id;
-  const getOneDetail = `SELECT * FROM bike_details WHERE bike_details.oid = ?`;
+// app.get("/api/bikedetails/:id", (req, res) => {
+//   const detailId = req.params.id;
+//   const getOneDetail = `SELECT * FROM bike_details WHERE bike_details.oid = ?`;
+
+//   db.all(getOneDetail, [detailId], (error, results) => {
+//     if (error) {
+//       console.log("Failed to retrieve single bike detail from table.", error);
+//       res.sendStatus(500);
+//     } else res.status(200).json(results);
+//   });
+// });
+app.get("/api/bikedetails/:bike_name", (req, res) => {
+  const detailId = req.params.bike_name;
+  const getOneDetail = `SELECT * FROM bike_details WHERE bike_details.bike_name = ?`;
 
   db.all(getOneDetail, [detailId], (error, results) => {
     if (error) {

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
 
 body {
     margin: 0;
@@ -21,7 +22,7 @@ code {
 }
 .title {
   font-size: 160%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Sriracha', cursive;
   color: white;
   position: absolute;
   display: inline-block;

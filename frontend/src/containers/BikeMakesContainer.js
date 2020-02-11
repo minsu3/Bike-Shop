@@ -8,7 +8,7 @@ import specialized from "../images/specialized.png";
 // const image = require('../images/'+bikemake.brand);
 import trek from "../images/trek.png";
 import cannondale from "../images/cannondale.jpeg";
-//import shoppingCart from '../components/shoppingCart';
+
 
 class BikeMakesContainer extends Component {
   state = {
@@ -21,6 +21,7 @@ class BikeMakesContainer extends Component {
 
   fetchData = () => {
     fetchAllBikeMakes.all().then(data => {
+      console.log(data)
       this.setState({ bikemakes: data });
     });
   };
@@ -38,7 +39,7 @@ class BikeMakesContainer extends Component {
               onClick= {SpecializedBikes}
             />
           )
-        } if(bikemake.brand === "trek"){
+        } else if(bikemake.brand === "trek"){
           return(
             <BikeMake 
               img={trek}
@@ -47,7 +48,7 @@ class BikeMakesContainer extends Component {
               onClick={TrekBikes}
             />
           )
-        } if(bikemake.brand === "cannondale"){
+        } else if(bikemake.brand === "cannondale"){
           return(
             <BikeMake 
               img={cannondale}
@@ -56,9 +57,9 @@ class BikeMakesContainer extends Component {
               onClick={CannondaleBikes}
             />
           )
-        }
-      });
-    } 
+        } else return <h1>no bikes found</h1>
+      }) 
+    }
     return <div>{indexList}</div>;
   }
 }

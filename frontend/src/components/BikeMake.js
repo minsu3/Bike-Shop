@@ -9,7 +9,7 @@ class BikeMake extends Component {
       <div className="brands">
           <Nav.Link href={"/bikes/"+this.props.bikemake.brand}>
             <h3>
-              <img src={this.props.img} />
+              <img src={this.props.img} alt=""/>
               {/* {this.props.bikemake.brand} */}
             </h3>
           </Nav.Link>

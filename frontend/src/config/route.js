@@ -19,11 +19,11 @@ export default (
       <Route path="/findretailer" component={findRetailer} />
       <Route path="/userauth" component={signIn} />
       <Route exact path="/bikes" component= {BikeMakesContainer} />
-      <Route path="/bikes/specialized" component={BikeDetailsContainer} />
-      <Route path="/bikes/trek" component={BikeDetailsContainer} />
-      <Route path="/bikes/cannondale" component={BikeDetailsContainer} />
-      <Route path="/viewbike/:id" render={(props) => {
-        return <getOneBike rowid = {props.match.params.id} />
+      <Route path ="/bikes/:brand" render= {(props) => {
+        return <BikeDetailsContainer brand={props.match.params.brand} />
+      }} /> 
+      <Route path="/bikes/:brand/:bike_name" render={(props) => {
+        return <getOneBike bike_name = {props.match.params.bike_name} />
       }} />
       <Route path="/aboutus" component={aboutPage} />
       <Route exact path="/shoppingcart" component={shoppingCart} />

@@ -8,13 +8,12 @@ class SpecializedBikes extends Component {
   render() { 
     return (
       <div className="specs">
-        <Nav.Link href={"/viewbike"} className="hover" > 
-          <img src={this.props.img } alt="" />
+        <Nav.Link href={"/bikes/"+this.props.bikedetail.brand+"/"+this.props.bikedetail.bike_name} className="hover" > 
+          <img src={this.props.img} alt="" />
           <p> 
           {/* {this.props.bikedetail.brand}  */}
           {this.props.bikedetail.bike_name} 
-          </p>     
-
+          </p>
         </Nav.Link>
         <p>______________________________</p>
         <div className="text-align-left">

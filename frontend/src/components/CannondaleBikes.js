@@ -8,7 +8,7 @@ class CannondaleBikes extends Component {
   render() {
     return (
       <div className="specs">
-        <Nav.Link href={"/viewbike"} className="hover" >
+        <Nav.Link href={"/bikes/" + this.props.bikedetail.brand + "/" + this.props.bikedetail.bike_name} className="hover" >
           <img src={this.props.img} alt="" />
           <p>
             {/* {this.props.bikedetail.brand}  */}

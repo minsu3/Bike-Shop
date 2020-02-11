@@ -32,10 +32,12 @@ class BikeDetailsContainer extends Component {
   };
 
   render() {
-    let indexLists;
+    let bikeLists;
+    let bikeBrand = this.props.brand
     if (this.state.bikedetails) {
-      indexLists = this.state.bikedetails.map((bikedetail, index) => {
-        if(bikedetail.brand === "specialized" && bikedetail.bike_name === "Venge") {
+      bikeLists = this.state.bikedetails.map((bikedetail) => {
+        if(bikedetail.brand === bikeBrand && bikedetail.bike_name === "Venge") {
+          console.log(bikedetail)
           return (
             <SpecializedBikes
               img={shopvenge}
@@ -44,7 +46,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         } 
-        else if(bikedetail.brand === "specialized" && bikedetail.bike_name === "Shiv") {
+        else if(bikedetail.brand === bikeBrand && bikedetail.bike_name === "Shiv") {
           return (
             <SpecializedBikes
               img={shopshiv}
@@ -53,7 +55,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         } 
-        else if(bikedetail.brand === "specialized" && bikedetail.bike_name === "Stumpjumper") {
+        else if(bikedetail.brand === bikeBrand && bikedetail.bike_name === "Stumpjumper") {
           return (
             <SpecializedBikes
               img={shopstumpjumper}
@@ -62,7 +64,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         } 
-        else if (bikedetail.brand === "trek" && bikedetail.bike_name === "Domane") {
+        else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Domane") {
           return (
             <TrekBikes
               img={shopdomane}
@@ -71,7 +73,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         } 
-        else if (bikedetail.brand === "trek" && bikedetail.bike_name === "Boone") {
+        else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Boone") {
           return (
             <TrekBikes
               img={shopboone}
@@ -80,7 +82,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         } 
-        else if (bikedetail.brand === "trek" && bikedetail.bike_name === "Super Caliber") {
+        else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Super Caliber") {
           return (
             <TrekBikes
               img={shopsupercaliber}
@@ -89,7 +91,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         } 
-        else if (bikedetail.brand === "cannondale" && bikedetail.bike_name === "Super Six Evo") {
+        else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Super Six Evo") {
           return (
             <CannondaleBikes
               img={shopsupersixevo}
@@ -98,7 +100,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         }
-        else if (bikedetail.brand === "cannondale" && bikedetail.bike_name === "Bad Habit") {
+        else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Bad Habit") {
           return (
             <CannondaleBikes
               img={shopbadhabit}
@@ -107,7 +109,7 @@ class BikeDetailsContainer extends Component {
             />
           );
         }
-        else if (bikedetail.brand === "cannondale" && bikedetail.bike_name === "Caad 12") {
+        else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Caad 12") {
           return (
             <CannondaleBikes
               img={shopcaad12}
@@ -115,13 +117,11 @@ class BikeDetailsContainer extends Component {
               bikedetail={bikedetail}
             />
           );
-        }
+        } else return <h1> </h1>
       });
     }
     return (
-      <>
-        {indexLists}
-      </>
+      <>{bikeLists}</>
     );
   }
 }
