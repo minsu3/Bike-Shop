@@ -251,3 +251,26 @@ footer {
     position: relative;
     top: 500px;
 }
+.getOne {
+    position: absolute;
+    display: inline-block;
+    border-style: solid 2px black;
+    left: 45%;
+    top: 50%;
+    color: black;
+}
+h3 {
+    padding-bottom: 50px;
+}
+.cart {
+    position: absolute;
+    display: inline-block;
+    border-style: solid 2px black;
+    left: 10%;
+    top: 30%;
+    color: black;
+    font-size: 20px;
+}
+.cart-title {
+    font-size: x-large;
+}

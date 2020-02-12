@@ -5,28 +5,32 @@ import subscribeNow from '../components/subscribeNow';
 import findRetailer from '../components/findRetailer';
 import signIn from '../components/signIn';
 import BikeMakesContainer from "../containers/BikeMakesContainer";
-import aboutPage from '../components/aboutPage';
-import shoppingCart from '../components/shoppingCart';
+import AboutPage from '../components/AboutPage';
+import ShoppingCart from '../components/ShoppingCart';
 import BikeDetailsContainer from '../containers/BikeDetailsContainer';
-import getOneBike from '../components/getOneBike';
+import GetOneBike from '../components/GetOneBike';
 
 export default (
   <div>
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/home" component={Home} />
-      <Route path="/newsletter" component={subscribeNow} />
-      <Route path="/findretailer" component={findRetailer} />
-      <Route path="/userauth" component={signIn} />
-      <Route exact path="/bikes" component= {BikeMakesContainer} />
-      <Route path ="/bikes/:brand" render= {(props) => {
+      <Route exact path="/" component={ Home } />
+      <Route path="/home" component={ Home } />
+      <Route path="/newsletter" component={ subscribeNow } />
+      <Route path="/findretailer" component={ findRetailer } />
+      <Route path="/userauth" component={ signIn } />
+      <Route exact path="/bikes" component= { BikeMakesContainer } />
+      <Route path="/bikes/:brand/:bike_name" render={(props) => {
+        return <GetOneBike bike_name={props.match.params.bike_name}/>
+      }} />
+      <Route exact path="/shoppingcart" component={ ShoppingCart } />
+      <Route path="/shoppingcart/:brand/:bike_name" render={(props) => {
+        return <ShoppingCart bike_name={props.match.params.bike_name} />
+      }} />
+      <Route path="/bikes/:brand" render={(props) => {
         return <BikeDetailsContainer brand={props.match.params.brand} />
       }} /> 
-      <Route path="/bikes/:brand/:bike_name" render={(props) => {
-        return <getOneBike bike_name = {props.match.params.bike_name} />
-      }} />
-      <Route path="/aboutus" component={aboutPage} />
-      <Route exact path="/shoppingcart" component={shoppingCart} />
+      <Route path="/aboutus" component={ AboutPage} />
+      
     </Switch>
   </div>
 );

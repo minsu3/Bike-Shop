@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import fetchAllBikeMakes from "../model/fetchAllBikeMakes";
 import BikeMake from "../components/BikeMake";
-import SpecializedBikes from "../components/SpecializedBikes";
-import TrekBikes from "../components/TrekBikes";
-import CannondaleBikes from "../components/CannondaleBikes";
 import specialized from "../images/specialized.png";
 // const image = require('../images/'+bikemake.brand);
 import trek from "../images/trek.png";
@@ -30,31 +27,28 @@ class BikeMakesContainer extends Component {
     let indexList;
     if (this.state.bikemakes) {
       indexList = this.state.bikemakes.map((bikemake, index) => {
-        if(bikemake.brand === "specialized") {
+        if(bikemake.brand === "Specialized") {
           return(
-            <BikeMake 
+            <BikeMake
               img={specialized}
-              alt="specialized"
+              alt="Specialized"
               bikemake={bikemake}
-              onClick= {SpecializedBikes}
             />
           )
-        } else if(bikemake.brand === "trek"){
+        } else if(bikemake.brand === "Trek"){
           return(
             <BikeMake 
               img={trek}
               alt="trek"
               bikemake={bikemake}
-              onClick={TrekBikes}
             />
           )
-        } else if(bikemake.brand === "cannondale"){
+        } else if(bikemake.brand === "Cannondale"){
           return(
             <BikeMake 
               img={cannondale}
               alt="cannondale"
               bikemake={bikemake}
-              onClick={CannondaleBikes}
             />
           )
         } else return <h1>no bikes found</h1>

@@ -1,27 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function getOneBike(props) {
-  // let indexList;
-  let bikeList;
-  let bikeName = this.props.bike_name;
-  if (this.props.bike_name) {
-    bikeLists = this.props.bikedetails.map((bike_name) => {
-      if (bike_name === this.props.bike_name) {
-        return (
-          <getOneBike
-            bike_name={bike_name}
-          />
-        )
-      }
-    })
+// using hooks
+function GetOneBike(props) {
+  const [bikeData, setBikeData] = useState(null);
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch(`http://localhost:9000/api/bikedetails/${props.bike_name}`)
+      const jsons = await response.json();
+      console.log(jsons);
+      setBikeData(jsons[0]);
+    }
+    getData();
+  }, [props]);
+
+  if (bikeData === null) {
+    return <h2>Loading...</h2>;
   }
+
   return (
-    <div>
-      <h2>SHOW SINGLE BIKE AND DESCRIPTION HERE</h2>
-      {bikeName}
-      <img src={this.props.img} alt="" />
+    <div className="getOne">
+      <h3 className="h3">{bikeData.brand} {bikeData.bike_name}</h3>
+      <p> Size: {bikeData.size} </p>
+      <p> Color: {bikeData.color} </p>
+      <p> Material: {bikeData.material} </p>
+      <p> Serial #: {bikeData.serial_number} </p>
+      <p> Component: {bikeData.component} </p>
     </div>
-  );
+  )
 }
 
-export default getOneBike;
+
+
+export default GetOneBike;

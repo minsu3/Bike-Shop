@@ -2,19 +2,18 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import getOneBike from "./getOneBike"
 
 class SpecializedBikes extends Component {
-  render() { 
+  render() {
     return (
       <div className="specs">
-        <Nav.Link href={"/bikes/"+this.props.bikedetail.brand+"/"+this.props.bikedetail.bike_name} className="hover" > 
+        <Nav.Link href={"/bikes/"+this.props.bikedetail.brand+"/"+this.props.bikedetail.bike_name} className="hover">
           <img src={this.props.img} alt="" />
-          <p> 
-          {/* {this.props.bikedetail.brand}  */}
-          {this.props.bikedetail.bike_name} 
-          </p>
-        </Nav.Link>
+          <p>{this.props.bikedetail.brand} {this.props.bikedetail.bike_name}</p>
+        </Nav.Link> 
+        <ButtonToolbar className="buynow">
+          <Button variant="dark" href={"/shoppingcart/"+this.props.bikedetail.brand+"/"+this.props.bikedetail.bike_name}>Add to Cart</Button>
+        </ButtonToolbar>
         <p>______________________________</p>
         <div className="text-align-left">
           <p> Size: {this.props.bikedetail.size} </p>
@@ -23,10 +22,7 @@ class SpecializedBikes extends Component {
           <p> Serial #: {this.props.bikedetail.serial_number} </p>
           <p> Component: {this.props.bikedetail.component} </p>
         </div>
-
-        <ButtonToolbar className="buynow">
-          <Button variant="dark" href={"/viewbike"}>Buy Now</Button>
-        </ButtonToolbar>
+        
       </div>  
     );
   }

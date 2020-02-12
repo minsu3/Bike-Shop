@@ -33,7 +33,7 @@ const createTableBikeDetailsQuery =
     color TEXT,
     material TEXT, 
     serial_number INTEGER, 
-    component TEXT
+    component TEXT,
   )`
 
 //                                                        ************* Order (join table) *************

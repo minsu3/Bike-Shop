@@ -1,34 +1,44 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
-class shoppingCart extends Component {
-    // state = {
-    //     key: '',
-    // }
+function ShoppingCart(props) {
+    const [bikeData, setBikeData] = useState(null);
+    useEffect(() => {
+        async function getData() {
+            const response = await fetch(`http://localhost:9000/api/bikedetails/${props.bike_name}`)
+            const jsons = await response.json();
+            console.log(jsons);
+            setBikeData(jsons[0]);
+        }
+        getData();
+    }, [props])
 
-    // componentDidMount() {
-    //     this.fetchData();
-    // }
+    if (bikeData === null) {
+        return <h2>Loading...</h2>
+    }
 
-    // fetchData = () => {
-    //     return fetch(`http://localhost:9000/api/specializedbikes`)
-    //     .then(response => {
-    //         response.json
-    //         response.filter((index) => {
-    //             if (index.brand_name == "Specialized") {
-    //                 this.setState({
-    //                     brand_name: index.brand_name
-    //                 })
-    //             }
-    //         }
-    //     )}
-    // )}    
-    render() {
+    if(bikeData !== []) {
         return (
-            <div>
-                <h2>Shopping Cart</h2>
+            <div className="cart">
+                <h3>On the cart:</h3>
+
+                <h4 className="cart-title"> {bikeData.color} {bikeData.brand} {bikeData.bike_name}</h4>
+                <p> Size: {bikeData.size} </p>
+                <p> Color:  </p>
+                <p> Material: {bikeData.material} </p>
+                <p> Serial #: {bikeData.serial_number} </p>
+                <p> Component: {bikeData.component} </p>
             </div>
         )
+    } else {
+        return <h2>Cart is empty</h2>
     }
+
+    return (
+        <div>
+            <h2></h2>
+        </div>
+    )
+
 }
 
-export default shoppingCart;
+export default ShoppingCart;

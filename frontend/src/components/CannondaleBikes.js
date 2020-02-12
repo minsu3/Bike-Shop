@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import getOneBike from "./getOneBike"
 
 class CannondaleBikes extends Component {
   render() {
@@ -14,8 +13,10 @@ class CannondaleBikes extends Component {
             {/* {this.props.bikedetail.brand}  */}
             {this.props.bikedetail.bike_name}
           </p>
-          <getOneBike />
         </Nav.Link>
+        <ButtonToolbar className="buynow">
+          <Button variant="dark" href={"/viewbike"}>Buy Now</Button>
+        </ButtonToolbar>
         <p>______________________________</p>
         <div className="text-align-left">
           <p> Size: {this.props.bikedetail.size} </p>
@@ -25,9 +26,6 @@ class CannondaleBikes extends Component {
           <p> Component: {this.props.bikedetail.component} </p>
         </div>
 
-        <ButtonToolbar className="buynow">
-          <Button variant="dark" href={"/viewbike"}>Buy Now</Button>
-        </ButtonToolbar>
       </div>
     );
   }

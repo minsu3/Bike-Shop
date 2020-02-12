@@ -15,6 +15,7 @@ import shopcaad12 from "../images/shopcaad12.png";
 import shopsupersixevo from "../images/shopsupersixevo.png";
 import shopbadhabit from "../images/shopbadhabit.png";
 
+
 class BikeDetailsContainer extends Component {
   state = {
     bikedetails: []
@@ -43,6 +44,7 @@ class BikeDetailsContainer extends Component {
               img={shopvenge}
               alt="venge"
               bikedetail={bikedetail}
+              onClick="venge"
             />
           );
         } 

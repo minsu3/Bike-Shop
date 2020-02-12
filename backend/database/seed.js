@@ -29,17 +29,17 @@ const users = [
 
 const bikes_make_list = [
   {
-    brand: "specialized",
+    brand: "Specialized",
     type: "road",
     category: "aero"
   },
   {
-    brand: "trek",
+    brand: "Trek",
     type: "mountain",
     category: "enduro"
   },
   {
-    brand: "cannondale",
+    brand: "Cannondale",
     type: "road",
     category: "lightweight"
   }
@@ -47,7 +47,7 @@ const bikes_make_list = [
 
 const bike_details_list = [
   {
-    brand: "specialized",
+    brand: "Specialized",
     bike_name: "Venge",
     size: "Medium",
     color: "Black",
@@ -56,7 +56,7 @@ const bike_details_list = [
     component: "Shimano"
   },
   {
-    brand: "specialized",
+    brand: "Specialized",
     bike_name: "Shiv",
     size: "Large",
     color: "Blue",
@@ -65,7 +65,7 @@ const bike_details_list = [
     component: "Shimano"
   },
   {
-    brand: "specialized",
+    brand: "Specialized",
     bike_name: "Stumpjumper",
     size: "Small",
     color: "Black",
@@ -74,7 +74,7 @@ const bike_details_list = [
     component: "Campagnolo"
   },
   {
-    brand: "trek",
+    brand: "Trek",
     bike_name: "Domane",
     size: "Large",
     color: "Red",
@@ -83,16 +83,17 @@ const bike_details_list = [
     component: "Sram Red"
   },
   {
-    brand: "trek",
+    brand: "Trek",
     bike_name: "Boone",
     size: "Small",
     color: "Dark Red",
     material: "Carbon Fiber",
     serial_number: "10004",
     component: "Campagnolo"
+    
   },
   {
-    brand: "trek",
+    brand: "Trek",
     bike_name: "Super Caliber",
     size: "Large",
     color: "Black",
@@ -101,7 +102,7 @@ const bike_details_list = [
     component: "Campagnolo"
   },
   {
-    brand: "cannondale",
+    brand: "Cannondale",
     bike_name: "Caad 12",
     size: "Medium",
     color: "Light Blue",
@@ -110,7 +111,7 @@ const bike_details_list = [
     component: "Shimano"
   },
   {
-    brand: "cannondale",
+    brand: "Cannondale",
     bike_name: "Super Six Evo",
     size: "Large",
     color: "Black and Orange",
@@ -119,7 +120,7 @@ const bike_details_list = [
     component: "Shimano"
   },
   {
-    brand: "cannondale",
+    brand: "Cannondale",
     bike_name: "Bad Habit",
     size: "Small",
     color: "Black",
