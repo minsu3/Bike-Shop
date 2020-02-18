@@ -20,7 +20,6 @@ function ShoppingCart(props) {
         return (
             <div className="cart">
                 <h3>On the cart:</h3>
-
                 <h4 className="cart-title"> {bikeData.color} {bikeData.brand} {bikeData.bike_name}</h4>
                 <p> Size: {bikeData.size} </p>
                 <p> Color:  </p>
@@ -33,11 +32,11 @@ function ShoppingCart(props) {
         return <h2>Cart is empty</h2>
     }
 
-    return (
-        <div>
-            <h2></h2>
-        </div>
-    )
+    // return (
+    //     <div>
+    //         <h2></h2>
+    //     </div>
+    // )
 
 }
 
