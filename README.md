@@ -1,12 +1,12 @@
 # React Bike Shop 
 
 ## Technologies Used
-\* Node
-\* Express
-\* React
-\* SQLite (database)
-\* MongoDB (user authentication)
-\* Entity Relationship Diagram
+* Node <br>
+* Express <br>
+* React <br>
+* SQLite (database) <br>
+* MongoDB (user authentication) <br>
+* Entity Relationship Diagram <br>
 
 
 ## Wireframe
