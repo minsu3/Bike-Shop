@@ -1,7 +1,7 @@
 # React Bike Shop 
-------------------
+
 ## Technologies Used
----------------------
+
 \* Node
 \* Express
 \* React
@@ -10,8 +10,8 @@
 
 ### Frontend Wireframe
 
-![carshoppingapi](./mainpage.jpg)
-![carshoppingapi](./gallery.jpg)
-![carshoppingapi](./shoppingcart.jpg)
+![carshoppingapi](.frontend/mainpage.jpg)
+![carshoppingapi](.frontend/gallery.jpg)
+![carshoppingapi](.frontend/shoppingcart.jpg)
 
 ### API 
