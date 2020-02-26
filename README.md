@@ -10,13 +10,7 @@
 * Entity Relationship Diagram <br>
 
 
-## Wireframe
-
-![carshoppingapi](./frontend/mainpage.jpg)
-![carshoppingapi](./frontend/gallery.jpg)
-![carshoppingapi](./frontend/shoppingcart.jpg)
-
-## RESTful API
+## REST APIs  
 Below are React Bike Shop's current endpoints. To access full CRUD operators, you can try it out using Postman!
 
 ### USER - GET, POST, PUT, DELETE
