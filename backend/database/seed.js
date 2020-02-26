@@ -163,7 +163,7 @@ db.serialize(() => {
   })
 
   const createUsersTableQuery = 
-    'CREATE TABLE users (first_name TEXT, last_name TEXT, email TEXT, street_number INTEGER, street_name TEXT, city TEXT, state TEXT, zip_code TEXT, phone_number TEXT, registration_date DATE)'
+    'CREATE TABLE users (first_name TEXT, last_name TEXT, email TEXT, street_number INTEGER, street_name TEXT, city TEXT, state TEXT, zip_code INTEGER, phone_number INTEGER, registration_date DATE)'
     db.run(createUsersTableQuery, error=> {
       if(error) console.error("Error creating 'users' table");
       else console.log("Created 'users' table");

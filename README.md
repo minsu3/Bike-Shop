@@ -50,4 +50,4 @@ Below are React Bike Shop's current endpoints. To access full CRUD operators, yo
 | DELETE | /api/orders/:id   |  Delete order information  |
 
 
-![bikeshoppingapi](./backend/dataentity.jpg)
+![bikeshoppingapi](./erd.jpeg)
