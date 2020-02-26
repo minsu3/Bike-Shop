@@ -278,13 +278,15 @@ app.post("/api/bikedetails", (req, res) => {
   const reqBody = [
     req.body.brand,
     req.body.bike_name,
+    req.body.image,
+    req.body.price,
     req.body.size,
     req.body.color,
     req.body.material,
     req.body.serial_number,
     req.body.component,
   ];
-  const insertNewDetail = "INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?, ?)";
+  const insertNewDetail = "INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
   db.run(insertNewDetail, reqBody, error => {
     if (error) {
@@ -304,6 +306,8 @@ app.put("/api/bikedetails/:id", (req, res) => {
     UPDATE bike_details SET 
       BRAND = ?,
       BIKE_NAME = ?,
+      IMAGE = ?,
+      PRICE = ?,
       SIZE = ?,
       COLOR = ?,
       MATERIAL = ?,
@@ -316,6 +320,8 @@ app.put("/api/bikedetails/:id", (req, res) => {
     [
       req.body.brand,
       req.body.bike_name,
+      req.body.image,
+      req.body.price,
       req.body.size,
       req.body.color,
       req.body.material,

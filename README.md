@@ -6,6 +6,7 @@
 * React <br>
 * SQLite (database) <br>
 * MongoDB (user authentication) <br>
+* Mongoose (user authentication) <br>
 * Entity Relationship Diagram <br>
 
 

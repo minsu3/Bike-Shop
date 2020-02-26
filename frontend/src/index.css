@@ -253,24 +253,28 @@ footer {
 }
 .getOne {
     position: absolute;
-    display: inline-block;
-    border-style: solid 2px black;
-    left: 45%;
-    top: 50%;
+    left: 28%;
+    top: 15%;
     color: black;
+}
+.oneImg {
+    width: 600px;
 }
 h3 {
     padding-bottom: 50px;
 }
 .cart {
     position: absolute;
-    display: inline-block;
-    border-style: solid 2px black;
+    display: block;
+    border-style: solid 1px black;
     left: 10%;
-    top: 30%;
+    top: 20%;
     color: black;
     font-size: 20px;
 }
 .cart-title {
-    font-size: x-large;
+    font-size: large;
+}
+.cartImg {
+    width: 300px;
 }

@@ -49,6 +49,8 @@ const bike_details_list = [
   {
     brand: "Specialized",
     bike_name: "Venge",
+    image: "https://i.imgur.com/xhq3E9Y.png",
+    price: 8000,
     size: "Medium",
     color: "Black",
     material: "Carbon Fiber",
@@ -58,6 +60,8 @@ const bike_details_list = [
   {
     brand: "Specialized",
     bike_name: "Shiv",
+    image: "https://i.imgur.com/J3IyGKd.png",
+    price: 12000,
     size: "Large",
     color: "Blue",
     material: "Carbon Fiber",
@@ -67,6 +71,8 @@ const bike_details_list = [
   {
     brand: "Specialized",
     bike_name: "Stumpjumper",
+    image: "https://i.imgur.com/Zi4v8SE.png",
+    price: 5000,
     size: "Small",
     color: "Black",
     material: "Carbon Fiber",
@@ -76,6 +82,8 @@ const bike_details_list = [
   {
     brand: "Trek",
     bike_name: "Domane",
+    image: "https://i.imgur.com/aCzl3Se.png",
+    price: 9000,
     size: "Large",
     color: "Red",
     material: "Carbon Fiber",
@@ -85,16 +93,19 @@ const bike_details_list = [
   {
     brand: "Trek",
     bike_name: "Boone",
+    image: "https://i.imgur.com/iIArysz.png",
+    price: 3000,
     size: "Small",
     color: "Dark Red",
     material: "Carbon Fiber",
     serial_number: "10004",
     component: "Campagnolo"
-    
   },
   {
     brand: "Trek",
     bike_name: "Super Caliber",
+    image: "https://i.imgur.com/5fb9qa0.png",
+    price: 2000,
     size: "Large",
     color: "Black",
     material: "Carbon Fiber",
@@ -104,6 +115,8 @@ const bike_details_list = [
   {
     brand: "Cannondale",
     bike_name: "Caad 12",
+    image: "https://i.imgur.com/MOxZA2X.png",
+    price: 1000,
     size: "Medium",
     color: "Light Blue",
     material: "Aluminum",
@@ -113,6 +126,8 @@ const bike_details_list = [
   {
     brand: "Cannondale",
     bike_name: "Super Six Evo",
+    image: "https://i.imgur.com/x3kztyY.png",
+    price: 7000,
     size: "Large",
     color: "Black and Orange",
     material: "Carbon Fiber",
@@ -122,12 +137,14 @@ const bike_details_list = [
   {
     brand: "Cannondale",
     bike_name: "Bad Habit",
+    image: "https://i.imgur.com/PT0vt1x.png",
+    price: 6000,
     size: "Small",
     color: "Black",
     material: "Carbon Fiber",
     serial_number: "10008",
     component: "Campagnolo"
-  },
+  }
 ]
 
 // join tables will be created in seed file
@@ -136,8 +153,9 @@ const bike_details_list = [
 // Whenever you run seed.js
 //                                                 ************* Drop, Create, Insert users Table *************
 
-// Let's create a synchronous database function
+// Let's create a synschronous database function
 db.serialize(() => {
+
   const dropUsersTableQuery = 'DROP TABLE IF EXISTS users';
   db.run(dropUsersTableQuery, error=> {
     if(error) console.error("Error dropping 'users' table");
@@ -194,17 +212,17 @@ db.serialize(() => {
   })
 
   const createBikeDetailsTableQuery =
-    'CREATE TABLE bike_details (brand INTEGER, bike_name TEXT, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
+    'CREATE TABLE bike_details (brand INTEGER, bike_name TEXT, image TEXT, price INTEGER, size TEXT, color TEXT, material TEXT, serial_number INTEGER, component TEXT)';
   db.run(createBikeDetailsTableQuery, error => {
     if (error) console.error("Error creating 'bike_details' table");
     else console.log("Created 'bike_details' table");
   })
 
-  const insertBikeDetailsQuery = 'INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const insertBikeDetailsQuery = 'INSERT INTO bike_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
   for (let bikedetail of bike_details_list) {
-    let bikeDetailData = [bikedetail.brand, bikedetail.bike_name, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component];
+    let bikeDetailData = [bikedetail.brand, bikedetail.bike_name, bikedetail.image, bikedetail.price, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component];
     db.run(insertBikeDetailsQuery, bikeDetailData, error => {
-      if (error) console.log("Could not insert into bike_details table", [bikedetail.brand, bikedetail.bike_name, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component], error);
+      if (error) console.log("Could not insert into bike_details table", [bikedetail.brand, bikedetail.bike_name, bikedetail.image, bikedetail.price, bikedetail.size, bikedetail.color, bikedetail.material, bikedetail.serial_number, bikedetail.component], error);
       else console.log(`Inserted bike into bike_details table`);
     })
   }

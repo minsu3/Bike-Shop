@@ -7,14 +7,14 @@ class TrekBikes extends Component {
   render() {
     return (
       <div className="specs">
+
         <Nav.Link href={"/bikes/" + this.props.bikedetail.brand+"/"+this.props.bikedetail.bike_name} className="hover" >
-          <img src={this.props.img} alt="" />
-          <p> 
-          {/* {this.props.bikedetail.brand}  */}
-          {this.props.bikedetail.bike_name} 
-          </p>
+          <img src={this.props.bikedetail.image} alt="new" />
+          <p> {this.props.bikedetail.bike_name} </p>
         </Nav.Link>
+
         <p>______________________________</p>
+        
         <div className="text-align-left">
           <p> Size: {this.props.bikedetail.size} </p>
           <p> Color: {this.props.bikedetail.color} </p>

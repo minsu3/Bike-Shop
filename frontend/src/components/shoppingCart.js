@@ -20,7 +20,8 @@ function ShoppingCart(props) {
         return (
             <div className="cart">
                 <h3>On the cart:</h3>
-                <h4 className="cart-title"> {bikeData.color} {bikeData.brand} {bikeData.bike_name}</h4>
+                <img src={bikeData.image} alt="new" className="cartImg"/>
+                <p className="cart-title"><strong>{bikeData.color} {bikeData.brand} {bikeData.bike_name}</strong></p>
                 <p> Size: {bikeData.size} </p>
                 <p> Color:  </p>
                 <p> Material: {bikeData.material} </p>
