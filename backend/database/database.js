@@ -11,8 +11,8 @@ const createTableUsersQuery =
     street_name TEXT,
     city TEXT, 
     state TEXT,
-    zip_code TEXT,
-    phone_number TEXT,
+    zip_code INTEGER,
+    phone_number INTEGER,
     registration_date DATE
   )`;
 

@@ -9,7 +9,6 @@
 * Mongoose (user authentication) <br>
 * Entity Relationship Diagram <br>
 
-
 ## REST APIs  
 Below are React Bike Shop's current endpoints. To access full CRUD operators, you can try it out using Postman!
 
@@ -49,5 +48,5 @@ Below are React Bike Shop's current endpoints. To access full CRUD operators, yo
 | PUT    | /api/orders/:id   |  Update order information   |
 | DELETE | /api/orders/:id   |  Delete order information  |
 
-
+## Entity Relationship Diagram 
 ![bikeshoppingapi](./erd.jpeg)

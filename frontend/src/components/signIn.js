@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import Routes from "../register/config/routes";
-import NavBar from "../register/components/Layout/NavBar";
+import Routes from "../auth-frontend/config/routes";
+import NavBar from "../auth-frontend/components/Layout/NavBar";
 
-class signIn extends Component {
-    
+class SignIn extends Component {
+
   state = {
     currentUser: localStorage.getItem("uid")
   };
@@ -37,4 +37,4 @@ class signIn extends Component {
   }
 }
 
-export default withRouter(signIn);
+export default withRouter(SignIn);

@@ -32,13 +32,6 @@ function ShoppingCart(props) {
     } else {
         return <h2>Cart is empty</h2>
     }
-
-    // return (
-    //     <div>
-    //         <h2></h2>
-    //     </div>
-    // )
-
 }
 
 export default ShoppingCart;

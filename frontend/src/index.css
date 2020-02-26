@@ -142,7 +142,7 @@ img {
     font-family: 'Anton', sans-serif;
     font-size: xx-large;
 }
-auth {
+.auth {
     text-align: center;
     align-items: flex-start;
     display: flex;
@@ -232,7 +232,6 @@ footer {
     width: 100%;
     height: 765px;
     object-fit: cover;
-
 }
 .hover {
     transition: box-shadow .3s; 
@@ -255,6 +254,12 @@ footer {
     position: absolute;
     left: 28%;
     top: 15%;
+    color: black;
+}
+.goBack {
+    position: absolute;
+    left: 30px;
+    top: 120px;
     color: black;
 }
 .oneImg {

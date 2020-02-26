@@ -3,7 +3,6 @@ import SpecializedBikes from "../components/SpecializedBikes";
 import TrekBikes from "../components/TrekBikes";
 import CannondaleBikes from "../components/CannondaleBikes";
 import fetchAllBikeDetails from "../model/fetchAllBikeDetails";
-// import BikeMakesContainer from "./BikeMakesContainer";
 
 class BikeDetailsContainer extends Component {
   state = {
@@ -53,10 +52,8 @@ class BikeDetailsContainer extends Component {
           return <CannondaleBikes bikedetail={bikedetail} />
         }
         else if (bikedetail.brand === bikeBrand && bikedetail.bike_name === "Caad 12") {
-          return (
-            <CannondaleBikes bikedetail={bikedetail} />
-          );
-        } else return <h1> </h1>
+          return <CannondaleBikes bikedetail={bikedetail} />
+        } else return <></>
       });
     }
     return (
