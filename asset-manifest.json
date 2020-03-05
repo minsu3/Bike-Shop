@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Bike-Shop/static/css/main.079a64cf.chunk.css",
+    "main.js": "/Bike-Shop/static/js/main.d3552b5c.chunk.js",
+    "main.js.map": "/Bike-Shop/static/js/main.d3552b5c.chunk.js.map",
+    "runtime-main.js": "/Bike-Shop/static/js/runtime-main.9b8f8b92.js",
+    "runtime-main.js.map": "/Bike-Shop/static/js/runtime-main.9b8f8b92.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/Bike-Shop/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.93c9cdac.chunk.js": "/Bike-Shop/static/js/2.93c9cdac.chunk.js",
+    "static/js/2.93c9cdac.chunk.js.map": "/Bike-Shop/static/js/2.93c9cdac.chunk.js.map",
+    "index.html": "/Bike-Shop/index.html",
+    "precache-manifest.3200fdacc1190185d1021a3fa6e457f0.js": "/Bike-Shop/precache-manifest.3200fdacc1190185d1021a3fa6e457f0.js",
+    "service-worker.js": "/Bike-Shop/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/Bike-Shop/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.079a64cf.chunk.css.map": "/Bike-Shop/static/css/main.079a64cf.chunk.css.map",
+    "static/js/2.93c9cdac.chunk.js.LICENSE": "/Bike-Shop/static/js/2.93c9cdac.chunk.js.LICENSE",
+    "static/media/bikeview.jpg": "/Bike-Shop/static/media/bikeview.0cb7fd88.jpg",
+    "static/media/cannondale.jpeg": "/Bike-Shop/static/media/cannondale.6a364ec2.jpeg",
+    "static/media/footerimage.png": "/Bike-Shop/static/media/footerimage.4ff2b731.png",
+    "static/media/riding.mp4": "/Bike-Shop/static/media/riding.d361c615.mp4",
+    "static/media/shoppingcart.png": "/Bike-Shop/static/media/shoppingcart.b337033e.png",
+    "static/media/specialized.png": "/Bike-Shop/static/media/specialized.5886859c.png",
+    "static/media/sworks.jpg": "/Bike-Shop/static/media/sworks.2573a50c.jpg",
+    "static/media/trek.png": "/Bike-Shop/static/media/trek.afd0de21.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9b8f8b92.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.93c9cdac.chunk.js",
+    "static/css/main.079a64cf.chunk.css",
+    "static/js/main.d3552b5c.chunk.js"
+  ]
+}
