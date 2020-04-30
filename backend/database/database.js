@@ -16,7 +16,7 @@ const createTableUsersQuery =
     registration_date DATE
   )`;
 
-//                                                        ************* Bike Make Table *************
+// Bike Make Table
 const createTableBikeMakeQuery =
   `CREATE TABLE IF NOT EXISTS bike_make (
     brand TEXT,
@@ -24,7 +24,7 @@ const createTableBikeMakeQuery =
     category TEXT
   )`
 
-//                                                        ************* Bike Details Table *************
+// Bike Details Table
 const createTableBikeDetailsQuery =
   `CREATE TABLE IF NOT EXISTS bike_details (
     FOREIGN KEY (brand) REFERENCES bike_make(brand),
@@ -38,7 +38,7 @@ const createTableBikeDetailsQuery =
     component TEXT,
   )`
 
-//                                                        ************* Order (join table) *************
+// Order (join table)
 
 const createTableOrdersQuery =
   `CREATE TABLE IF NOT EXISTS orders (

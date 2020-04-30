@@ -14,7 +14,7 @@ class SpecializedBikes extends Component {
         </Nav.Link> 
 
         <p> ${this.props.bikedetail.price}</p>
-        <p>______________________________</p>
+        {/* <p>______________________________</p> */}
 
         <div className="text-align-left">
           <p> <strong>Size:</strong> {this.props.bikedetail.size} </p>

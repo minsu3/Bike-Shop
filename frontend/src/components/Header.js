@@ -9,7 +9,8 @@ const navStyle = {
   position: "fixed",
   top: 0,
   width: "100%",
-  zIndex: 1
+  zIndex: 1,
+  padding: 0
 };
 
 // Header component will contain all the components in the static navbar
@@ -22,19 +23,23 @@ class Header extends Component {
             <Nav.Link href={"/newsletter"} className="light">
               Subscribe to our Newsletter
             </Nav.Link>
-            <Nav.Link href={"/findretailer"} className="findretailer">
-              <img src={retailmarker} alt="retailmarker" className="retailmarker" />
-              Find a retailer
-            </Nav.Link>
             <Nav.Link href={"/userauth"} className="signin">
-              Sign in
+              Sign in | Register
+            </Nav.Link>
+            <Nav.Link href={"/findretailer"} className="findretailer">
+              <img
+                src={retailmarker}
+                alt="retailmarker"
+                className="retailmarker"
+              />
+              Find a retailer
             </Nav.Link>
           </Nav>
         </Navbar>
-{/* Second navbar containing home page, bike, and about us components */}
+        {/* Second navbar containing home page, bike, and about us components */}
         <Navbar bg="light" variant="light" className="nextbar">
           <Navbar.Brand href={"/home"} id="brand">
-            REACT BICYCLE SHOP
+            BIKEA
           </Navbar.Brand>
           <Nav id="second">
             <Nav.Link href={"/bikes"} className="next">
@@ -44,8 +49,8 @@ class Header extends Component {
               About Us
             </Nav.Link>
           </Nav>
-          <Nav.Link href={"/shoppingcart"}>
-            <img src={shoppingcart} alt="shoppingcart" className="shopping" />
+          <Nav.Link href={"/shoppingcart"} className="shopping">
+            <img src={shoppingcart} alt="shoppingcart" />
           </Nav.Link>
         </Navbar>
       </div>

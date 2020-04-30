@@ -20,26 +20,25 @@ code {
     height: 25px;
     color: white;
 }
+
 .title {
-  font-size: 160%;
-  font-family: 'Sriracha', cursive;
-  color: white;
-  position: absolute;
-  display: inline-block;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+    /* font-family: ; */
+    color: white;
+    position: absolute;
+    display: block;
+    left: 20%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
-#shopnow {
-  font-size: 120%;
-  position: absolute;
-  display: inline-block;
-  left: 50%;
-  top: 65%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.shopnow {
+    font-size: 120%;
+    position: absolute;
+    top: 120%;
+    left: 19%;
+    display: inline-block;
+    
 }
 h2 {
     font-family: 'Big Shoulders Text';
@@ -109,34 +108,38 @@ img {
     background-position: center;
     object-fit: cover;
     width: 40%;
-    position: relative;
-    top: 200px;
+    position: absolute;
+    top: 1500px;
     left: 60px;
+    display: block;
 }
 .bikeview {
     background-position: center;
     object-fit: cover;
     width: 40%;
-    position: relative;
-    top: 200px;
-    left: 230px;
+    position: absolute;
+    top: 1500px;
+    right: 20px;
 }
 .light {
     font-size: medium;
     height: 5px;
     color: black;
     text-align: right;
+    display: block;
 }
 .next {
     font-size: x-large;
     color: black;
     position: relative;
     left: 50px;
+    display: block;
 }
 .aboutus {
     position: relative;
     left: 100px;
     font-size: x-large;
+    display: block;
 }
 #brand {
     font-family: 'Anton', sans-serif;
@@ -157,18 +160,21 @@ img {
     font-family: 'Big Shoulders Text';
     font-size: 50px;
 }
+.signin {
+    position: absolute;
+    right: 10px;
+    display: block;
+}
 .findretailer {
     position: relative;
-    left: 930px;
-}
-.signin {
-    position: relative;
-    left: 970px;
+    left: 30px;
+    display: block;
 }
 .shopping {
-    width: 50px;
-    position: relative;
-    left: 776px;
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    display: block;
 }
 .retailmarker {
     width: 18px;
@@ -195,9 +201,10 @@ img {
 footer {
     text-align: center;
     align-items: flex-start;
-    height: 1000px;
+    top: 1000px;
     width: 100%;
     background-color: black;
+    position: absolute;
 }
 .fullscreen-video-wrap{
   position: absolute;
@@ -232,6 +239,9 @@ footer {
     width: 100%;
     height: 765px;
     object-fit: cover;
+    display: block;
+    position: relative;
+    top: 0px;
 }
 .hover {
     transition: box-shadow .3s; 

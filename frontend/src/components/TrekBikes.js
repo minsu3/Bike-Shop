@@ -10,7 +10,7 @@ class TrekBikes extends Component {
 
         <Nav.Link href={"/bikes/" + this.props.bikedetail.brand+"/"+this.props.bikedetail.bike_name} className="hover" >
           <img src={this.props.bikedetail.image} alt="new" />
-          <p> {this.props.bikedetail.bike_name} </p>
+          <p><strong>{this.props.bikedetail.brand} {this.props.bikedetail.bike_name}</strong></p>
         </Nav.Link>
 
         <p>______________________________</p>

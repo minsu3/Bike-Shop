@@ -1,5 +1,6 @@
 const db = require('./database.js');
 
+// seed data
 const users = [
   {
     first_name: "Minsu",
@@ -150,12 +151,10 @@ const bike_details_list = [
 // join tables will be created in seed file
 
 
-// Whenever you run seed.js
-//                                                 ************* Drop, Create, Insert users Table *************
-
-// Let's create a synschronous database function
+// Create a synschronous database function
 db.serialize(() => {
 
+  // Drop, Create, Insert users Table
   const dropUsersTableQuery = 'DROP TABLE IF EXISTS users';
   db.run(dropUsersTableQuery, error=> {
     if(error) console.error("Error dropping 'users' table");
@@ -177,8 +176,6 @@ db.serialize(() => {
       else console.log(`Inserted user with name ${user.first_name} ${user.last_name} into 'users' table`);
     })
   }
-
-  //                                            ************* Drop, Create, Insert bike_make Table *************
 
   // Drop, Create, Insert Bikes Makes list and table 
   const dropBikeMakeTableQuery = 'DROP TABLE IF EXISTS bike_make';
@@ -202,7 +199,6 @@ db.serialize(() => {
       else console.log(`Inserted bike into bike_make table`);
     })
   }
-//                                            ************* Drop, Create, Insert bike_details Table *************
 
   // Drop, Create, Insert Bike Details table
   const dropBikeDetailsTableQuery = 'DROP TABLE IF EXISTS bike_details';
@@ -226,7 +222,6 @@ db.serialize(() => {
       else console.log(`Inserted bike into bike_details table`);
     })
   }
-  //                                               ************* Drop, Create, Insert orders Table *************
 
   // JOIN TABLES: ORDERS TABLE
   const dropOrdersTableQuery = 'DROP TABLE IF EXISTS orders';

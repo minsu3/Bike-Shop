@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class subscribeNow extends Component {
+class Subscribe extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class subscribeNow extends Component {
     }
 }
 
-export default subscribeNow;
+export default Subscribe;

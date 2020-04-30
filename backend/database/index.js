@@ -36,7 +36,7 @@ app.get("/api/users", (req, res) => {
 
 app.get("/api/users/:id", (req, res) => {
   const userId = req.params.id;
-  const getOneUser = `SELECT * FROM users WHERE users.oid =?`;
+  const getOneUser = `SELECT * FROM users WHERE users.oid = ?`;
 
   db.all(getOneUser, [userId], (error, results) => {
     if (error) {
@@ -138,17 +138,18 @@ app.delete("/api/users/:id", (req, res) => {
       console.log(`Successfully deted from customer with id of ${userId}.`);
     }
   });
-  // db.run(deleteUserOrder, userId, error => {
-  //   if(error) {
-  //     res.sendStatus(500);
-  //   } else {
-  //     console.log(`Delete from orders with user id of ${userId} succeeded`);
-  //     res.sendStatus(200);
-  //   }
-  // })
+  // join table
+  db.run(deleteUserOrder, userId, error => {
+    if(error) {
+      res.sendStatus(500);
+    } else {
+      console.log(`Delete from orders with user id of ${userId} succeeded`);
+      res.sendStatus(200);
+    }
+  })
 });
 
-//                                                          ************* BIKE MAKE *************
+// BIKE MAKE
 
 // GET all bike makes 
 app.get("/api/bike_make", (req, res) => {
@@ -235,8 +236,7 @@ app.delete("/api/bike_make/:id", (req, res) => {
   });
 });
 
-
-//                                                          ************* BIKE DETAILS *************
+// BIKE DETAILS 
 
 // GET all bike details 
 app.get("/api/bikedetails", (req, res) => {
@@ -261,7 +261,7 @@ app.get("/api/bikedetails", (req, res) => {
 //       res.sendStatus(500);
 //     } else res.status(200).json(results);
 //   });
-// });
+// }); 
 app.get("/api/bikedetails/:bike_name", (req, res) => {
   const detailId = req.params.bike_name;
   const getOneDetail = `SELECT * FROM bike_details WHERE bike_details.bike_name = ?`;
@@ -356,7 +356,7 @@ app.delete("/api/bikedetails/:id", (req, res) => {
   });
 });
 
-//                                                     ************* ORDER (join table) *************
+// ORDER (join table)
 
 app.get("/api/orders", (req, res) => {
   const queryString = `SELECT * FROM orders`;
