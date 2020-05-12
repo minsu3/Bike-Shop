@@ -1,16 +1,16 @@
-# React Bike Shop 
+# CycleList (eCommerce Site) 
 
 ## Technologies Used
 * Node <br>
 * Express <br>
 * React <br>
-* SQLite (database) <br>
-* MongoDB (user authentication) <br>
-* Mongoose (user authentication) <br>
+* SQLite <br>
+* MongoDB <br>
+* Mongoose <br>
 * Entity Relationship Diagram <br>
 
-## REST APIs  
-Below are React Bike Shop's current endpoints. To access full CRUD operators, you can try it out using Postman!
+## REST API
+Below are React Bike Shop's current endpoints. To access full CRUD operators, you can try it out using Postman! Note: This project is still in progress, all of the endpoints will be utilized in the application.
 
 ### USER - GET, POST, PUT, DELETE
 |   Requests      | Path        | Description |
@@ -21,7 +21,7 @@ Below are React Bike Shop's current endpoints. To access full CRUD operators, yo
 |  PUT  | /api/users/:id       |  Update a user's information   |
 |  DELETE  | /api/users/:id      |  Delete information on user  |
 
-### BIKE BRANDS - GET, POST, PUT, DELETE
+### BIKE MAKES - GET, POST, PUT, DELETE
 |   Requests      |    Path        | Description |
 | ----------- | ----------- | ----------- |
 |  GET  | /api/bikemake  | Get all bike make information  |
@@ -30,14 +30,14 @@ Below are React Bike Shop's current endpoints. To access full CRUD operators, yo
 |  PUT  | /api/bikemake/:id  |  Update a bike make information   |
 |  DELETE  | /api/bikemake/:id   |  Delete a bike make information  |
 
-### BIKE SPECS - GET, POST, PUT, DELETE
+### BIKE DETAILS (from bike makes)- GET, POST, PUT, DELETE
 |    Requests   |    Path     | Description  |
 | ----------- | ----------- | ----------- |
-| GET    | /api/bikespecs       |  Get list of all bike spec information   |
-| GET    | /api/bikespecs/:id   |  Get information on single bike spec  |
-| POST   | /api/bikespecs/      |  Create bike spec information  |
-| PUT    | /api/bikespecs/:id   |  Update bike spec information   |
-| DELETE | /api/bikespecs/:id   |  Delete bike spec information  |
+| GET    | /api/bikedetails       |  Get list of all bike details information   |
+| GET    | /api/bikedetails/:id   |  Get information on single bike detail  |
+| POST   | /api/bikedetails/      |  Create bike detail information  |
+| PUT    | /api/bikedetails/:id   |  Update bike detail information   |
+| DELETE | /api/bikedetails/:id   |  Delete bike detail information  |
 
 ### ORDER JOIN TABLE - GET, POST, PUT, DELETE
 |    Requests   |    Path     | Description  |
@@ -49,4 +49,4 @@ Below are React Bike Shop's current endpoints. To access full CRUD operators, yo
 | DELETE | /api/orders/:id   |  Delete order information  |
 
 ## Entity Relationship Diagram 
-![bikeshoppingapi](./erd.jpeg)
+![bikeshoppingapi](./erd.png)
