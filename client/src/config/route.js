@@ -9,7 +9,7 @@ import AboutPage from '../components/AboutPage';
 import ShoppingCart from '../components/ShoppingCart';
 import BikeDetailsContainer from '../containers/BikeDetailsContainer';
 import GetOneBike from '../components/GetOneBike';
-import SignLanding from "../auth-frontend/components/Home/SignLanding";
+import SignLanding from "../authentication/components/Home/SignLanding";
 
 
 export default (

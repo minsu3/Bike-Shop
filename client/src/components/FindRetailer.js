@@ -7,7 +7,7 @@ class FindRetailer extends Component {
             <>
                 <div className="map">
                     <Map />
-                    <p className="findretail">Find Retailer</p>
+                    <p className="findretailer">Find Retailer</p>
                 </div>
             </>
         )

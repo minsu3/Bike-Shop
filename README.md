@@ -10,7 +10,7 @@
 * Entity Relationship Diagram <br>
 
 ## REST API
-Below are React Bike Shop's current endpoints. To access full CRUD operators, you can try it out using Postman! Note: This project is still in progress, all of the endpoints will be utilized in the application.
+Below are CycleList's current endpoints. To access full CRUD operators, you can try it out using Postman! Note: This project is still in progress, all of the endpoints will be utilized in the application.
 
 ### USER - GET, POST, PUT, DELETE
 |   Requests      | Path        | Description |

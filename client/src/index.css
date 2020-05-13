@@ -8,6 +8,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: black;
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -21,13 +22,14 @@ code {
     color: white;
 }
 
+/* Home */
+
 .title {
-    /* font-family: ; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     position: absolute;
-    display: block;
-    left: 20%;
-    top: 30%;
+    left: 200px;
+    top: 400px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
@@ -38,28 +40,42 @@ code {
     top: 120%;
     left: 19%;
     display: inline-block;
-    
 }
+img {
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+    transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+} 
+.sworks {
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+}
+.bikeview {
+    background-position: center;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Temp */
+
 h2 {
-    font-family: 'Big Shoulders Text';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: xx-large;
     color: black;
     text-align: center;
     position: absolute;
-    top: 30%;
+    top: 160px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#brands {
-    color: black;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-}
+
+/* Bike Specs */
+
 .specs {
-    /* margin-top: 400px;*/
     margin-left: 130px; 
     position: relative;
     top: 100px;
@@ -68,18 +84,7 @@ h2 {
     display: inline-block;
     width: 300px;
 }
-.specializedbikes {
-    /* margin-top: 400px;*/
-    margin-left: 130px; 
-    position: relative;
-    top: 200px;
-    color: black;
-    text-align: center;
-    display: inline-block;
-    width: 300px;
-}
 .buynow {
-    /* margin-top: 400px;*/
     margin-left: 105px; 
     position: relative;
     top: 20px;
@@ -89,83 +94,48 @@ h2 {
     width: 300px;
     margin-bottom: 60px;
 }
-#reactbike {
-    color: white;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    transform: translate(-50%, -50%);
-    width: 10%;
-    height: 10%;
+
+/* Header */
+#brand-header {
+    font-family: 'Anton', sans-serif;
+    font-size: xx-large;
 }
-img {
-    background-position: center;
-    object-fit: cover;
-    width: 100%;
-    position: relative;
-} 
-.sworks {
-    background-position: center;
-    object-fit: cover;
-    width: 40%;
-    position: absolute;
-    top: 1500px;
-    left: 60px;
-    display: block;
-}
-.bikeview {
-    background-position: center;
-    object-fit: cover;
-    width: 40%;
-    position: absolute;
-    top: 1500px;
-    right: 20px;
-}
-.light {
-    font-size: medium;
-    height: 5px;
-    color: black;
-    text-align: right;
-    display: block;
-}
-.next {
+.shop-by-brand {
     font-size: x-large;
     color: black;
     position: relative;
     left: 50px;
     display: block;
 }
-.aboutus {
-    position: relative;
-    left: 100px;
+.about-us {
     font-size: x-large;
+    color: black;
+    position: relative;
+    left: 350px;
     display: block;
 }
-#brand {
-    font-family: 'Anton', sans-serif;
-    font-size: xx-large;
-}
-.auth {
-    text-align: center;
-    align-items: flex-start;
-    display: flex;
-    height: 96px;
-    background-color: black;
+.sell {
+    font-size: x-large;
+    color: black;
+    position: relative;
+    left: 200px;
+    display: inline-block;
 }
 
-.findretail {
+
+.findretailer {
     position: relative;
     left: 50px;
     top: 570px;
     font-family: 'Big Shoulders Text';
     font-size: 50px;
 }
-.signin {
+.signin-header {
     position: absolute;
     right: 10px;
     display: block;
 }
-.findretailer {
+.findretailer-header {
     position: relative;
     left: 30px;
     display: block;
@@ -223,17 +193,18 @@ footer {
     top: 150px;
 }
 .brands {
-    margin-top: 160px;
-    color: black;
     text-align: center;
-    height: 48px;
-    color: black;
-    display: block;
-    margin: 0 auto;
-    width: 35%;
-    height: 250px;
+}
+.bikeMake {
+    display: inline-block;
+    width: 40%;
     position: relative;
-    top: 100px;
+    top: 200px;
+}
+.bikeMake:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    color: black;
+    border-radius: 10px;
 }
 .videoTag {
     width: 100%;
@@ -246,6 +217,7 @@ footer {
 .hover {
     transition: box-shadow .3s; 
     color: black;
+    border-radius: 10px;
 }
 .hover:hover {
   box-shadow: 0 0 11px rgba(33,33,33,.2); 
@@ -255,10 +227,6 @@ footer {
     text-align: left;
     position: relative;
     left: 50px;
-}
-.footer {
-    position: relative;
-    top: 500px;
 }
 .getOne {
     position: absolute;

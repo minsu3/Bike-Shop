@@ -23,10 +23,10 @@ class Header extends Component {
             <Nav.Link href={"/newsletter"} className="light">
               Subscribe to our Newsletter
             </Nav.Link>
-            <Nav.Link href={"/userauth"} className="signin">
+            <Nav.Link href={"/userauth"} className="signin-header">
               Sign in | Register
             </Nav.Link>
-            <Nav.Link href={"/findretailer"} className="findretailer">
+            <Nav.Link href={"/findretailer"} className="findretailer-header">
               <img
                 src={retailmarker}
                 alt="retailmarker"
@@ -38,14 +38,17 @@ class Header extends Component {
         </Navbar>
         {/* Second navbar containing home page, bike, and about us components */}
         <Navbar bg="light" variant="light" className="nextbar">
-          <Navbar.Brand href={"/home"} id="brand">
-            BIKEA
+          <Navbar.Brand href={"/home"} id="brand-header">
+            CycleList
           </Navbar.Brand>
           <Nav id="second">
-            <Nav.Link href={"/bikes"} className="next">
+            <Nav.Link href={"/bikes"} className="shop-by-brand">
               Shop by Brand
             </Nav.Link>
-            <Nav.Link href={"/aboutus"} className="aboutus">
+            <Nav.Link href={"/sell"} className="sell">
+              Sell Your Bikes
+            </Nav.Link>
+            <Nav.Link href={"/aboutus"} className="about-us">
               About Us
             </Nav.Link>
           </Nav>
