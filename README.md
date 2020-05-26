@@ -1,5 +1,7 @@
 # CycleList (eCommerce Site) 
 
+### Deployment in progress!
+
 ## How to run project locally
 - clone repo
 - cd cyclelist
@@ -11,9 +13,7 @@
   - npm start
 - cd auth 
   - npm install
-  - nodemon (or node.index)
-
-### Deployment in progress!
+  - nodemon (or node index.js)
 
 ## Technologies Used
 * Node <br>
