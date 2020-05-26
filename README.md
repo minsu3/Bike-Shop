@@ -1,5 +1,20 @@
 # CycleList (eCommerce Site) 
 
+## How to run project locally
+- clone repo
+- cd cyclelist
+  - npm install
+- cd backend 
+  - node seed.js
+  - nodemon
+- cd client 
+  - npm start
+- cd auth 
+  - npm install
+  - nodemon (or node.index)
+
+### Deployment in progress!
+
 ## Technologies Used
 * Node <br>
 * Express <br>
