@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import fetchAllBikeMakes from "../model/fetchAllBikeMakes";
 import BikeMake from "../components/BikeMake";
 import specialized from "../images/specialized.png";
-// const image = require('../images/'+bikemake.brand);
 import trek from "../images/trek.png";
 import cannondale from "../images/cannondale.jpeg";
 

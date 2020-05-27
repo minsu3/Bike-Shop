@@ -29,11 +29,11 @@ const NavBar = ({ currentUser, logout }) => {
           Profile
         </NavLink>
       </li>
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <NavLink className="nav-link" to="/userauth/contacts">
           Contacts
         </NavLink>
-      </li>
+      </li> */}
       <li className="nav-item">
         <span
           className="nav-link"

@@ -72,27 +72,36 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.description {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /* Bike Specs */
 
 .specs {
-    margin-left: 130px; 
+    margin-left: 80px; 
     position: relative;
-    top: 100px;
+    top: 200px;
     color: black;
     text-align: center;
     display: inline-block;
     width: 300px;
 }
 .buynow {
-    margin-left: 105px; 
     position: relative;
-    top: 20px;
+    left: 85px;
+    top: 30px;
     color: black;
     text-align: center;
     display: inline-block;
     width: 300px;
-    margin-bottom: 60px;
 }
 
 /* Header */
@@ -111,7 +120,7 @@ h2 {
     font-size: x-large;
     color: black;
     position: relative;
-    left: 350px;
+    left: 100px;
     display: block;
 }
 .sell {
@@ -197,12 +206,13 @@ footer {
 }
 .bikeMake {
     display: inline-block;
-    width: 40%;
+    width: 400px;
     position: relative;
     top: 200px;
+    /* pointer-events: none; */
 }
 .bikeMake:hover {
-    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    box-shadow: 0 0 11px rgba(8, 8, 8, 0.2); 
     color: black;
     border-radius: 10px;
 }
@@ -230,9 +240,14 @@ footer {
 }
 .getOne {
     position: absolute;
-    left: 28%;
-    top: 15%;
-    color: black;
+    left: 20px;
+    top: 200px;
+    display: flex;
+}
+.getOne > div {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 50px;
 }
 .goBack {
     position: absolute;

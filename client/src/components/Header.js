@@ -45,9 +45,6 @@ class Header extends Component {
             <Nav.Link href={"/bikes"} className="shop-by-brand">
               Shop by Brand
             </Nav.Link>
-            <Nav.Link href={"/sell"} className="sell">
-              Sell Your Bikes
-            </Nav.Link>
             <Nav.Link href={"/aboutus"} className="about-us">
               About Us
             </Nav.Link>

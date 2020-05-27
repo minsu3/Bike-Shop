@@ -19,7 +19,7 @@ function ShoppingCart(props) {
     if(bikeData !== []) {
         return (
             <div className="cart">
-                <h3>On the cart:</h3>
+                <h3>Wishlist</h3>
                 <img src={bikeData.image} alt="new" className="cartImg"/>
                 <p className="cart-title"><strong>{bikeData.color} {bikeData.brand} {bikeData.bike_name}</strong></p>
                 <p> Size: {bikeData.size} </p>

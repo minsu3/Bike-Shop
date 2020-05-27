@@ -7,8 +7,8 @@ class BikeMake extends Component {
   render() {
     return (
       <div className="brands">
-        <Nav.Link href={"/bikes/" + this.props.bikemake.brand}>
         <h2>Choose Our Best Brands</h2>
+        <Nav.Link href={"/bikes/" + this.props.bikemake.brand}>
           <img src={this.props.img} alt="" className="bikeMake" />
         </Nav.Link>
       </div>
