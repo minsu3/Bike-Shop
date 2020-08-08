@@ -1,4 +1,4 @@
-# CycleList (eCommerce Site) 
+# CycleList (eCommerce) 
 
 ### Deployment in progress!
 
