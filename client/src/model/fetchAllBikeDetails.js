@@ -8,7 +8,6 @@ class fetchAllBikeDetails {
   };
   static delete = (bike) => {
     let rowid = bike.rowid;
-    // not expecting rowid in the body
     delete bike.rowid;
     return fetch(`${endpoint}/${rowid}`, {
       method: "DELETE"

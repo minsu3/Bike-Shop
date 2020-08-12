@@ -5,7 +5,6 @@ import specialized from "../images/specialized.png";
 import trek from "../images/trek.png";
 import cannondale from "../images/cannondale.jpeg";
 
-
 class BikeMakesContainer extends Component {
   state = {
     bikemakes: []
@@ -24,7 +23,7 @@ class BikeMakesContainer extends Component {
 
   render() {
     let indexList;
-    if (this.state.bikemakes) {
+    if(this.state.bikemakes) {
       indexList = this.state.bikemakes.map((bikemake, index) => {
         if(bikemake.brand === "Specialized") {
           return(
@@ -50,7 +49,7 @@ class BikeMakesContainer extends Component {
               bikemake={bikemake}
             />
           )
-        } else return <h1>no bikes found</h1>
+        } else return <h1>No bikes found.</h1>
       }) 
     }
     return <div>{indexList}</div>;
