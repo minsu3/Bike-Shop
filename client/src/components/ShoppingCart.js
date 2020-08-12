@@ -23,7 +23,7 @@ function ShoppingCart(props) {
                 <img src={bikeData.image} alt="new" className="cartImg"/>
                 <p className="cart-title"><strong>{bikeData.color} {bikeData.brand} {bikeData.bike_name}</strong></p>
                 <p> Size: {bikeData.size} </p>
-                <p> Color:  </p>
+                <p> Color: {bikeData.color}  </p>
                 <p> Material: {bikeData.material} </p>
                 <p> Serial #: {bikeData.serial_number} </p>
                 <p> Component: {bikeData.component} </p>
