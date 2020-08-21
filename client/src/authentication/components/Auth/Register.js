@@ -53,7 +53,7 @@ class Register extends Component {
             </div>
           ))}
         <section id="register" className="col-md-6 offset-md-3">
-          <h2 className="mb-4" style={{ position: "relative", top: "10px" }}>Register</h2>
+          <h2 className="mb-4" style={{ position: "relative", top: "10px" }}>Sign Up</h2>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username</label>
@@ -64,7 +64,7 @@ class Register extends Component {
                 value={this.state.username}
                 onChange={this.handleChange}
                 className="form-control form-control-lg"
-                placeholder="SuperCool Guy"
+                placeholder="username"
               />
             </div>
             <div className="form-group">

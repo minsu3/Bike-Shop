@@ -5,18 +5,13 @@ const NavBar = ({ currentUser, logout }) => {
   const links = (
     <>
       <li className="nav-item">
-        <NavLink className="nav-link" exact to="/userauth">
-          Home
-        </NavLink>
-      </li>
-      <li className="nav-item">
         <NavLink className="nav-link" to="/userauth/login">
           Login
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/userauth/register">
-          Register
+        <NavLink className="nav-link" exact to="/userauth">
+          Sign Up
         </NavLink>
       </li>
     </>
@@ -29,11 +24,11 @@ const NavBar = ({ currentUser, logout }) => {
           Profile
         </NavLink>
       </li>
-      {/* <li className="nav-item">
+      <li className="nav-item">
         <NavLink className="nav-link" to="/userauth/contacts">
           Contacts
         </NavLink>
-      </li> */}
+      </li>
       <li className="nav-item">
         <span
           className="nav-link"
