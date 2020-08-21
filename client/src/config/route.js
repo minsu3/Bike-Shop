@@ -9,8 +9,7 @@ import AboutPage from '../components/AboutPage';
 import ShoppingCart from '../components/ShoppingCart';
 import BikeDetailsContainer from '../containers/BikeDetailsContainer';
 import GetOneBike from '../components/GetOneBike';
-import SignLanding from "../authentication/components/Home/SignLanding";
-
+import Register from "../authentication/components/Auth/Register";
 
 export default (
   <div>
@@ -20,7 +19,7 @@ export default (
       <Route path="/newsletter" component={ Subscribe } />
       <Route path="/findretailer" component={ FindRetailer } />
       <Route path="/userauth" component={ SignIn } />
-      <Route exact path="/userauth" component={ SignLanding } />
+      <Route exact path="/userauth" component={ Register } />
       <Route exact path="/bikes" component= { BikeMakesContainer } />
       <Route path="/bikes/:brand/:bike_name" render={(props) => {
         return <GetOneBike bike_name={props.match.params.bike_name}/>

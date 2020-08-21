@@ -24,7 +24,7 @@ class Header extends Component {
               Subscribe to our Newsletter
             </Nav.Link>
             <Nav.Link href={"/userauth"} className="signin-header">
-              Sign in | Register
+              Sign in
             </Nav.Link>
             <Nav.Link href={"/findretailer"} className="findretailer-header">
               <img
