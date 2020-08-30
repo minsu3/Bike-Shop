@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import Routes from "../authentication/config/authRoutes";
-import NavBar from "../authentication/components/Layout/NavBar";
+import Routes from "../../../auth/auth-client/config/authRoutes";
+import NavBar from "../../../auth/auth-client/components/Layout/NavBar";
 
 class SignIn extends Component {
 

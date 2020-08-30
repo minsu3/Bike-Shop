@@ -9,7 +9,7 @@ import AboutPage from '../components/AboutPage';
 import ShoppingCart from '../components/ShoppingCart';
 import BikeDetailsContainer from '../containers/BikeDetailsContainer';
 import GetOneBike from '../components/GetOneBike';
-import Register from "../authentication/components/Auth/Register";
+import Register from "../../../auth/auth-client/components/Auth/Register";
 
 export default (
   <div>
