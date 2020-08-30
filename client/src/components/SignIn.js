@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import Routes from "../../../auth/auth-client/config/authRoutes";
+import Routes from "../../../auth/auth-client/config/routes";
 import NavBar from "../../../auth/auth-client/components/Layout/NavBar";
 
 class SignIn extends Component {
-
   state = {
     currentUser: localStorage.getItem("uid")
   };
@@ -24,7 +23,6 @@ class SignIn extends Component {
   render() {
     return (
       <>
-        {/* <Auth /> */}
         <NavBar currentUser={this.state.currentUser} logout={this.logout} />
         <div className="container">
           <Routes
