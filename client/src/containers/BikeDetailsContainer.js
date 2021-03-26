@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import SpecializedBikes from "../components/SpecializedBikes";
-import TrekBikes from "../components/TrekBikes";
-import CannondaleBikes from "../components/CannondaleBikes";
-import fetchAllBikeDetails from "../model/fetchAllBikeDetails";
+import SpecializedBikes from "../components/bikes/SpecializedBikes";
+import TrekBikes from "../components/bikes/TrekBikes";
+import CannondaleBikes from "../components/bikes/CannondaleBikes";
+import { fetchAllBikeDetails } from "../model/fetch";
 
 class BikeDetailsContainer extends Component {
   state = {
@@ -21,11 +21,10 @@ class BikeDetailsContainer extends Component {
   };
 
   render() {
-    let bikeLists;
+    let bikeLists
     let bikeBrand = this.props.brand
     if (this.state.bikedetails) {
       bikeLists = this.state.bikedetails.map((bikedetail) => {
-        // how should I refactor this?
         if(bikedetail.brand === bikeBrand && bikedetail.bike_name === "Venge") {
           console.log(bikedetail)
           return <SpecializedBikes bikedetail={bikedetail} onClick="venge" />

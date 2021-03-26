@@ -1,8 +1,14 @@
-const endpoint = "http://localhost:9000/api/bikedetails";
+class fetchAllBikeMakes {
+  static all = () => {
+    return fetch("http://localhost:9000/api/bike_make")
+      .then(response => response.json())
+      .catch(err => console.log("Could not get all bike makes\n", err));
+  };
+}
 
 class fetchAllBikeDetails {
   static all = () => {
-    return fetch(endpoint)
+    return fetch("http://localhost:9000/api/bikedetails")
       .then(response => response.json())
       .catch(err => console.log("Could not get all all bike details\n", err));
   };
@@ -16,4 +22,5 @@ class fetchAllBikeDetails {
   }
 }
 
-export default fetchAllBikeDetails;
+
+export default {fetchAllBikeMakes, fetchAllBikeDetails};

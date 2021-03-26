@@ -3,13 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Subscribe from '../components/Subscribe';
 import FindRetailer from '../components/FindRetailer';
-import SignIn from '../components/SignIn';
-import BikeMakesContainer from "../containers/BikeMakesContainer";
 import AboutPage from '../components/AboutPage';
 import ShoppingCart from '../components/ShoppingCart';
+import BikeMakesContainer from "../containers/BikeMakesContainer";
 import BikeDetailsContainer from '../containers/BikeDetailsContainer';
 import GetOneBike from '../components/GetOneBike';
-import Register from "../../../auth/auth-client/components/Auth/Register";
+import SignIn from '../components/SignIn';
+import Register from '../../src/auth-client/components/Auth/Register';
+
 
 export default (
   <div>
@@ -31,7 +32,7 @@ export default (
       <Route path="/bikes/:brand" render={(props) => {
         return <BikeDetailsContainer brand={props.match.params.brand} />
       }} /> 
-      <Route path="/aboutus" component={ AboutPage} />
+      <Route path="/aboutus" component={ AboutPage } />
     </Switch>
   </div>
 );

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
-function GetOneBike(props) {
+const GetOneBike = (props) => {
   const [bikeData, setBikeData] = useState(null);
+  
   useEffect(() => {
     async function getData() {
       const response = await fetch(`http://localhost:9000/api/bikedetails/${props.bike_name}`)
@@ -27,11 +28,11 @@ function GetOneBike(props) {
             {bikeData.brand} {bikeData.bike_name}
           </h3>
           <div>
-            <p> Size: {bikeData.size} </p>
-            <p> Color: {bikeData.color} </p>
-            <p> Material: {bikeData.material} </p>
-            <p> Serial #: {bikeData.serial_number} </p>
-            <p> Component: {bikeData.component} </p>
+            <p>Size: {bikeData.size}</p>
+            <p>Color: {bikeData.color}</p>
+            <p>Material: {bikeData.material}</p>
+            <p>Serial #: {bikeData.serial_number}</p>
+            <p>Component: {bikeData.component}</p>
           </div>
         </div>
       </div>
@@ -46,7 +47,5 @@ function GetOneBike(props) {
     </div>
   );
 }
-
-
 
 export default GetOneBike;

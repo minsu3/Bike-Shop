@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function ShoppingCart(props) {
+const ShoppingCart = (props) => {
     const [bikeData, setBikeData] = useState(null);
     useEffect(() => {
         async function getData() {

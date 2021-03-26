@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import Routes from "../../../auth/auth-client/config/routes";
-import NavBar from "../../../auth/auth-client/components/Layout/NavBar";
+import Routes from "../../src/auth-client/config/authRoutes";
+import NavBar from "../../src/auth-client/components/Layout/NavBar";
 
 class SignIn extends Component {
   state = {
@@ -14,7 +14,6 @@ class SignIn extends Component {
   };
 
   logout = () => {
-    // Handle Logout
     localStorage.removeItem("uid");
     this.setState({ currentUser: null });
     this.props.history.push("/userauth/login");

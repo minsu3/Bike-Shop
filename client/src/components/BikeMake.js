@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Nav from "react-bootstrap/Nav";
-// import BikeDetails from './BikeDetails';
 
-
-class BikeMake extends Component {
-  render() {
-    return (
-      <div className="brands">
-        <h2>Choose Our Best Brands</h2>
-        <Nav.Link href={"/bikes/" + this.props.bikemake.brand}>
-          <img src={this.props.img} alt="" className="bikeMake" />
-        </Nav.Link>
-      </div>
-    );
-  }
+const BikeMake = () => {
+  return (
+    <div className="brands">
+      <h2>Choose Our Best Brands</h2>
+      <Nav.Link href={`/bikes/`+this.props.bikemake.brand}>
+        <img src={this.props.img} alt="" className="bikeMake" />
+      </Nav.Link>
+    </div>
+  )
 }
 
 export default BikeMake;

@@ -29,7 +29,7 @@ class BikeMakesContainer extends Component {
           return(
             <BikeMake
               img={specialized}
-              alt="Specialized"
+              alt="specialized"
               bikemake={bikemake}
             />
           )
